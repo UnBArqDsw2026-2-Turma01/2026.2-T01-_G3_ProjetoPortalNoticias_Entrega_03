@@ -17,9 +17,7 @@ Este projeto foi desenvolvido para a disciplina **Arquitetura e Desenho de Softw
 
 **Código da Disciplina**: FGA0208  
 **Número do Grupo**: 03  
-**Entrega**: 02
-
-## Membros do Grupo
+**Entrega**: 03
 
 ## Membros do grupo
 
