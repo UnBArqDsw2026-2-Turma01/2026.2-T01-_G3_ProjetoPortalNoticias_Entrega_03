@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demonstração do padrão Decorator aplicado aos temas comemorativos da Home do Burburinho." />
+    <title>Burburinho · Decorator</title>
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <aside class="demo" aria-label="Controles da demonstração">
+      <div class="demo-heading"><strong>Decorator</strong><span>Home Burburinho · Notícias fictícias para demonstração</span></div>
+      <form id="temas" aria-label="Temas comemorativos">
+        <label><input type="radio" name="tema" value="padrao" checked /> Padrão</label>
+        <label><input type="radio" name="tema" value="natal" /> Natal</label>
+        <label><input type="radio" name="tema" value="halloween" /> Halloween</label>
+        <label><input type="radio" name="tema" value="estudante" /> Dia do Estudante</label>
+        <button type="reset">Restaurar original</button>
+      </form>
+      <output id="composicao" aria-live="polite"></output>
+    </aside>
+    <main id="app" aria-label="Home do portal"></main>
+    <dialog id="leitura" aria-labelledby="titulo-leitura"></dialog>
+    <script type="module" src="js/cliente.js"></script>
+  </body>
+</html>
