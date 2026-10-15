@@ -1,4 +1,3 @@
-
 # Builder de notícias com Director
 
 ```mermaid
@@ -9,53 +8,53 @@ direction TB
 
     class NoticiaDirector {
 	    -builder: NoticiaBuilder
-	    +NoticiaDirector(builder: NoticiaBuilder)
-	    +setBuilder(builder: NoticiaBuilder) void
-	    +construirPersonalizada(titulo: String, subtitulo: String, categoria: String, capa: Imagem, autor: Autor, roteiro: List~ItemRoteiro~, fonte: String) void
-	    +construirNoticiaPadrao(titulo: String, categoria: String, capa: Imagem, autor: Autor, texto: String) void
-	    -validar(roteiro: List~ItemRoteiro~) void
+	    +NoticiaDirector()
+	    +setBuilder() void
+	    +construirPersonalizada() void
+	    +construirNoticiaPadrao() void
+	    -validar() void
     }
 
     class NoticiaBuilder {
 	    +reset() void
-	    +definirCabecalho(titulo: String, categoria: String, capa: Imagem) void
-	    +definirSubtitulo(subtitulo: String) void
-	    +definirAutor(autor: Autor) void
-	    +adicionarTexto(texto: String) void
-	    +adicionarImagem(img: Imagem) void
-	    +adicionarCarrossel(imgs: List~Imagem~) void
-	    +adicionarTopicos(itens: List~String~) void
-	    +definirRodape(fonte: String) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarTexto() void
+	    +adicionarImagem() void
+	    +adicionarCarrossel() void
+	    +adicionarTopicos() void
+	    +definirRodape() void
 	    +getResultado() Noticia
     }
 
     class NoticiaDestaqueBuilder {
 	    -noticia: Noticia
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarCarrossel(imgs) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
     class NoticiaCompactaBuilder {
 	    -noticia: Noticia
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarCarrossel(imgs) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
     class NoticiaMistaBuilder {
 	    -noticia: Noticia
 	    -posicaoTitulo: PosicaoTitulo
-	    +NoticiaMistaBuilder(posicaoTitulo: PosicaoTitulo)
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarImagem(img) void
-	    +adicionarCarrossel(imgs) void
+	    +NoticiaMistaBuilder()
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarImagem() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
@@ -70,7 +69,7 @@ direction TB
 	    -blocos: List~Bloco~
 	    -rodape: String
 	    +Noticia()
-	    +adicionar(b: Bloco) void
+	    +adicionar() void
 	    +getDataCriacao() Date
 	    +renderizar() String
     }
@@ -101,7 +100,7 @@ no construtor (new Date()): nem o
 Cliente nem o Builder informam a data"
 	note for NoticiaMistaBuilder "título e subtítulo ficam sobre a capa,
 na posição recebida no construtor"
-	note for Noticia "As informações do autor serão obtidas pelo servidor 
+	note for Noticia "As informações do autor serão obtidas pelo servidor
 	(id do user no banco por exemplo)"
 
     Cliente --> NoticiaDirector : usa
@@ -132,53 +131,53 @@ direction TB
 
     class NoticiaDirector {
 	    -builder: NoticiaBuilder
-	    +NoticiaDirector(builder: NoticiaBuilder)
-	    +setBuilder(builder: NoticiaBuilder) void
-	    +construirPersonalizada(titulo: String, subtitulo: String, categoria: String, capa: Imagem, autor: Autor, roteiro: List~ItemRoteiro~, fonte: String) void
-	    +construirNoticiaPadrao(titulo: String, categoria: String, capa: Imagem, autor: Autor, texto: String) void
-	    -validar(roteiro: List~ItemRoteiro~) void
+	    +NoticiaDirector()
+	    +setBuilder() void
+	    +construirPersonalizada() void
+	    +construirNoticiaPadrao() void
+	    -validar() void
     }
 
     class NoticiaBuilder {
 	    +reset() void
-	    +definirCabecalho(titulo: String, categoria: String, capa: Imagem) void
-	    +definirSubtitulo(subtitulo: String) void
-	    +definirAutor(autor: Autor) void
-	    +adicionarTexto(texto: String) void
-	    +adicionarImagem(img: Imagem) void
-	    +adicionarCarrossel(imgs: List~Imagem~) void
-	    +adicionarTopicos(itens: List~String~) void
-	    +definirRodape(fonte: String) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarTexto() void
+	    +adicionarImagem() void
+	    +adicionarCarrossel() void
+	    +adicionarTopicos() void
+	    +definirRodape() void
 	    +getResultado() Noticia
     }
 
     class NoticiaDestaqueBuilder {
 	    -noticia: Noticia
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarCarrossel(imgs) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
     class NoticiaCompactaBuilder {
 	    -noticia: Noticia
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarCarrossel(imgs) void
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
     class NoticiaMistaBuilder {
 	    -noticia: Noticia
 	    -posicaoTitulo: PosicaoTitulo
-	    +NoticiaMistaBuilder(posicaoTitulo: PosicaoTitulo)
-	    +definirCabecalho(titulo, categoria, capa) void
-	    +definirSubtitulo(subtitulo) void
-	    +definirAutor(autor) void
-	    +adicionarImagem(img) void
-	    +adicionarCarrossel(imgs) void
+	    +NoticiaMistaBuilder()
+	    +definirCabecalho() void
+	    +definirSubtitulo() void
+	    +definirAutor() void
+	    +adicionarImagem() void
+	    +adicionarCarrossel() void
 	    +getResultado() Noticia
     }
 
@@ -193,7 +192,7 @@ direction TB
 	    -blocos: List~Bloco~
 	    -rodape: String
 	    +Noticia()
-	    +adicionar(b: Bloco) void
+	    +adicionar() void
 	    +getDataCriacao() Date
 	    +renderizar() String
     }
@@ -224,7 +223,7 @@ no construtor (new Date()): nem o
 Cliente nem o Builder informam a data"
 	note for NoticiaMistaBuilder "título e subtítulo ficam sobre a capa,
 na posição recebida no construtor"
-	note for Noticia "As informações do autor serão obtidas pelo servidor 
+	note for Noticia "As informações do autor serão obtidas pelo servidor
 	(id do user no banco por exemplo)"
 
     Cliente --> NoticiaDirector : usa
