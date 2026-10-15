@@ -148,3 +148,23 @@
   --md-primary-fg-color: #f04444;
   --md-accent-fg-color: #f04444;
 }
+/* Hierarquia e espaçamento apenas dentro do bloco individual do Decorator. */
+.md-typeset details.decorator-relatorio h3 {
+  margin: 2.25rem 0 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.md-typeset details.decorator-relatorio h4 {
+  margin: 1.75rem 0 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.md-typeset details.decorator-relatorio p,
+.md-typeset details.decorator-relatorio .highlight,
+.md-typeset details.decorator-relatorio .md-typeset__scrollwrap {
+  margin-bottom: 1rem;
+}
