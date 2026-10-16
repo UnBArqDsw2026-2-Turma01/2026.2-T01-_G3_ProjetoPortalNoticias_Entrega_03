@@ -7,7 +7,7 @@ const salvar = () => `<button class="salvar" type="button" aria-label="Salvar no
 export function renderizarHome() {
     return `<div class="portal-home">
     <aside class="sidebar" aria-label="Navegação do portal">
-      <img class="marca" src="${asset('marca.png')}" alt="Burburinho" width="297" height="194" />
+      <img class="marca" src="${asset('LogoBurburinho.svg')}" alt="Burburinho" width="297" height="194" />
       <nav aria-label="Navegação principal">
         <a class="nav-item ativo" href="#inicio" aria-current="page">${icone('inicio')}Início</a>
         <a class="nav-item" href="#explorar">${icone('explorar')}Explorar</a>
