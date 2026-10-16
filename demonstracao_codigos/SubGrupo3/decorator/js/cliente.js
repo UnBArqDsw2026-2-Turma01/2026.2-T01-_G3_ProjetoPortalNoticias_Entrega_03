@@ -4,21 +4,38 @@ import { buscarNoticias, obterNoticia } from './home/noticias.js';
 const app = document.querySelector('#app');
 const formulario = document.querySelector('#temas');
 const composicao = document.querySelector('#composicao');
+
 function atualizar() {
-    const temas = Array.from(formulario.querySelectorAll('input:checked'))
-        .filter(input => input.value !== 'padrao')
-        .map(input => input.value);
-    DecoratorDemo.main(app, temas);
-    composicao.textContent = DecoratorDemo.descrever(temas);
+    const temaSelecionado =
+        formulario.querySelector('input[name="tema"]:checked')?.value;
+
+    const temas = temaSelecionado && temaSelecionado !== 'padrao'
+        ? [temaSelecionado]
+        : [];
+
+    const opcoes = {
+        destaqueInteresse:
+            formulario.querySelector('#destaque-interesse').checked
+    };
+
+    DecoratorDemo.main(app, temas, opcoes);
+    composicao.textContent = DecoratorDemo.descrever(temas, opcoes);
 }
+
 formulario.addEventListener('change', atualizar);
+
 formulario.addEventListener('reset', event => {
     event.preventDefault();
+
     for (const input of formulario.querySelectorAll('input[type="radio"]')) {
         input.checked = input.value === 'padrao';
     }
+
+    formulario.querySelector('#destaque-interesse').checked = false;
+
     atualizar();
 });
+
 // Uma interação local da Home, preservada por delegação após trocar a composição.
 app.addEventListener('click', event => {
     const botao = event.target.closest('.salvar');

@@ -32,7 +32,7 @@ export const noticias = [
     ],
   },
   {
-    id: 'flauta', foto: 'flauta', categoria: 'Cultura', cor: 'cultura',
+    id: 'flauta', foto: 'flauta', categoria: 'Cultura', cor: 'cultura', tags: ['musica', 'educacao'],
     titulo: 'Oficinas gratuitas aproximam estudantes da música',
     resumo: 'Aulas de flauta apresentam ritmo e prática coletiva para iniciantes.',
     autor: 'Flauta Aulas', inicial: 'F', tempo: '5h',
@@ -72,6 +72,170 @@ export const noticias = [
     ],
   },
 ];
+
+
+export const noticiasComemorativas = [
+    {
+        id: 'coral-natal',
+        foto: 'coralNatal',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Coral de Natal reúne moradores na praça central',
+        resumo: 'Apresentação gratuita celebra o Natal com músicas tradicionais e participação da comunidade.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '2h',
+        tema: 'natal',
+        tags: ['cultura', 'musica', 'eventos'],
+        texto: [
+            'A praça central recebe uma apresentação especial de Natal, reunindo músicos e moradores em uma programação gratuita.',
+            'O evento contará com canções tradicionais e apresentações coletivas, incentivando a participação da comunidade nas celebrações de fim de ano.'
+        ]
+    },
+    {
+        id: 'feira-doacao-natal',
+        foto: 'feiraDoacaoNatal',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Feira solidária de Natal arrecada brinquedos e alimentos',
+        resumo: 'Iniciativa reúne voluntários e pequenos produtores em uma programação beneficente.',
+        autor: 'Feira da Praça',
+        inicial: 'F',
+        tempo: '4h',
+        tema: 'natal',
+        tags: ['cultura', 'comunidade', 'solidariedade'],
+        texto: [
+            'Uma feira solidária movimenta a região com arrecadação de brinquedos e alimentos destinados a famílias da comunidade.',
+            'Além das doações, a programação contará com barracas de artesanato e atividades culturais para incentivar a participação dos moradores.'
+        ]
+    },
+    {
+        id: 'oficinas-natal',
+        foto: 'OficinasNatal',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Oficinas natalinas oferecem atividades gratuitas para crianças',
+        resumo: 'Programação inclui produção de enfeites, artesanato e atividades em família.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '6h',
+        tema: 'natal',
+        tags: ['cultura', 'educacao', 'artesanato'],
+        texto: [
+            'Um espaço comunitário promove oficinas de decoração natalina voltadas para crianças e familiares.',
+            'Durante as atividades, os participantes poderão produzir enfeites e conhecer técnicas simples de artesanato, estimulando a criatividade e a convivência.'
+        ]
+    },
+
+    
+    {
+        id: 'cinema-halloween',
+        foto: 'cinemaHalloween',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Cinema de terror promove sessão especial de Halloween',
+        resumo: 'Programação gratuita reúne clássicos do suspense em uma noite temática.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '1h',
+        tema: 'halloween',
+        tags: ['cultura', 'cinema', 'eventos'],
+        texto: [
+            'O centro cultural da região prepara uma sessão especial de cinema em comemoração ao Halloween, com exibição de filmes de suspense e terror.',
+            'O público poderá participar gratuitamente da programação, que também contará com atividades temáticas e espaços para interação entre os visitantes.'
+        ]
+    },
+    {
+        id: 'concurso-halloween',
+        foto: 'ConcursoFantasiaHalloween',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Concurso de fantasias movimenta celebração de Halloween',
+        resumo: 'Evento reúne criatividade, apresentações e premiações para participantes.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '3h',
+        tema: 'halloween',
+        tags: ['cultura', 'entretenimento', 'eventos'],
+        texto: [
+            'Um concurso de fantasias promete movimentar o centro comunitário durante as comemorações de Halloween, reunindo participantes de diferentes idades.',
+            'A programação inclui desfile de fantasias, apresentações artísticas e premiações simbólicas para as produções mais criativas.'
+        ]
+    },
+    {
+        id: 'feira-halloween',
+        foto: 'feiraHalloen',
+        categoria: 'Cultura',
+        cor: 'cultura',
+        titulo: 'Feira temática de Halloween reúne atrações e gastronomia',
+        resumo: 'Barracas decoradas, produtos artesanais e atividades especiais movimentam a praça.',
+        autor: 'Feira da Praça',
+        inicial: 'F',
+        tempo: '5h',
+        tema: 'halloween',
+        tags: ['cultura', 'gastronomia', 'eventos'],
+        texto: [
+            'A praça central recebe uma feira temática de Halloween com barracas decoradas, comidas especiais e produtos artesanais.',
+            'Além da gastronomia, os visitantes poderão participar de atividades recreativas e conhecer pequenos produtores da comunidade.'
+        ]
+    },
+
+    
+    {
+        id: 'curso-estudante',
+        foto: 'cursoEstudante',
+        categoria: 'Educação',
+        cor: 'educacao',
+        titulo: 'Projeto oferece bolsas para cursos preparatórios',
+        resumo: 'Iniciativa amplia o acesso de estudantes a oportunidades de formação gratuita.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '2h',
+        tema: 'estudante',
+        tags: ['educacao', 'cursos', 'oportunidades'],
+        texto: [
+            'Um projeto educacional anuncia a oferta de bolsas para cursos preparatórios destinados a estudantes da comunidade.',
+            'A iniciativa busca ampliar o acesso à formação e oferecer apoio para jovens que desejam ingressar no ensino superior.'
+        ]
+    },
+    {
+        id: 'feira-estudante',
+        foto: 'feiraEstudante',
+        categoria: 'Educação',
+        cor: 'educacao',
+        titulo: 'Feira de profissões apresenta oportunidades aos estudantes',
+        resumo: 'Evento reúne instituições e profissionais para orientar escolhas de carreira.',
+        autor: 'Redação Centro',
+        inicial: 'C',
+        tempo: '4h',
+        tema: 'estudante',
+        tags: ['educacao', 'profissoes', 'tecnologia'],
+        texto: [
+            'Uma feira de profissões reúne estudantes, instituições de ensino e profissionais de diferentes áreas em uma programação especial.',
+            'Os participantes poderão conhecer possibilidades de carreira, conversar com especialistas e participar de atividades de orientação profissional.'
+        ]
+    },
+    {
+        id: 'oficina-estudante',
+        foto: 'oficinaTecEstudante',
+        categoria: 'Educação',
+        cor: 'educacao',
+        titulo: 'Oficinas gratuitas aproximam estudantes da tecnologia',
+        resumo: 'Atividades práticas apresentam programação, robótica e inovação digital.',
+        autor: 'Renatech',
+        inicial: 'R',
+        tempo: '6h',
+        tema: 'estudante',
+        tags: ['educacao', 'tecnologia', 'inovacao'],
+        texto: [
+            'Estudantes da região poderão participar de oficinas gratuitas de introdução à programação, robótica e outras tecnologias.',
+            'As atividades incentivam o aprendizado prático e apresentam possibilidades de atuação profissional na área de tecnologia.'
+        ]
+    }
+
+
+];
+
 
 export const assuntosEmAlta = [
   'Programação cultural no Centro', 'Tecnologia e comunidade', 'Oficinas de música gratuitas',

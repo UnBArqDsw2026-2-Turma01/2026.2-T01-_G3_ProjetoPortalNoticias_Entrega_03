@@ -1093,3 +1093,434 @@ h1 {
 .avatar.feira {
     background: #8a3c9b;
 }
+
+
+/* ==========================================
+   DECORATOR — DESTAQUE DE INTERESSE
+   ========================================== */
+
+.noticia.noticia-interesse {
+    --interesse-cor1: #5368e8;
+    --interesse-cor2: #25b5d5;
+    --interesse-fundo: #eef3ff;
+
+    position: relative;
+    box-shadow: 0 6px 20px rgba(57, 83, 164, .16);
+}
+
+/* Moldura em degradê, sem modificar o tamanho do cartão */
+.noticia-interesse::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        135deg,
+        var(--interesse-cor1),
+        var(--interesse-cor2) 45%,
+        var(--interesse-cor1)
+    ) border-box;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Pequeno ornamento na transição entre foto e conteúdo */
+.noticia-interesse::after {
+    content: "✦";
+    position: absolute;
+    right: 12px;
+    top: 119px;
+
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 2px solid var(--interesse-cor1);
+    background: var(--cartao, #fff);
+    color: var(--interesse-cor1);
+
+    font-size: 17px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Selo identificador */
+.noticia-interesse .selo-interesse {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 9px;
+    padding: 5px 10px;
+    border-radius: 999px;
+
+    background: var(--interesse-fundo);
+    color: var(--interesse-cor1);
+    border: 1px solid var(--interesse-cor1);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+/* Efeito de profundidade ao passar o mouse */
+.noticia.noticia-interesse:hover {
+    box-shadow: 0 9px 26px rgba(57, 83, 164, .24);
+}
+
+/* ==========================================
+   DECORATOR — DESTAQUE DE INTERESSE
+   REFINADO
+   ========================================== */
+
+.noticia.noticia-interesse {
+    --interesse-cor1: #5368e8;
+    --interesse-cor2: #25b5d5;
+    --interesse-fundo: #eef3ff;
+    --interesse-ornamento: "✨";
+    --interesse-selo-prefixo: "✨";
+
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 24px rgba(57, 83, 164, .18),
+        0 0 0 1px rgba(83, 104, 232, .12);
+    transform-origin: center;
+}
+
+/* Moldura mais rica */
+.noticia-interesse::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+
+    background:
+        linear-gradient(135deg,
+            var(--interesse-cor1),
+            var(--interesse-cor2) 40%,
+            var(--interesse-cor1) 100%) border-box;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+/* Ornamento principal do card */
+.noticia-interesse::after {
+    content: var(--interesse-ornamento);
+    position: absolute;
+    right: 12px;
+    top: 118px;
+
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .95);
+    border: 2px solid var(--interesse-cor1);
+    color: var(--interesse-cor1);
+
+    font-size: 18px;
+    line-height: 1;
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, .14),
+        0 0 14px color-mix(in srgb, var(--interesse-cor1) 35%, transparent);
+
+    pointer-events: none;
+    z-index: 4;
+
+    animation: flutuarOrnamento 2.8s ease-in-out infinite;
+}
+
+/* brilho interno suave do card */
+.noticia-interesse .noticia-texto {
+    position: relative;
+}
+
+.noticia-interesse .noticia-texto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 12px 12px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .55;
+
+    background:
+        radial-gradient(circle at top right,
+            color-mix(in srgb, var(--interesse-cor2) 18%, transparent) 0%,
+            transparent 48%);
+}
+
+/* selo mais evidente */
+.noticia-interesse .selo-interesse {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, var(--interesse-fundo), #ffffff);
+    color: var(--interesse-cor1);
+    border: 1px solid color-mix(in srgb, var(--interesse-cor1) 55%, white);
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, .08),
+        0 0 0 1px rgba(255,255,255,.55) inset;
+
+    animation: pulsoSelo 1.9s ease-in-out infinite;
+    z-index: 1;
+}
+
+.noticia-interesse .selo-interesse::before {
+    content: var(--interesse-selo-prefixo);
+    font-size: 12px;
+    line-height: 1;
+}
+
+.noticia-interesse .selo-interesse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background: linear-gradient(
+        120deg,
+        transparent 10%,
+        rgba(255,255,255,.0) 35%,
+        rgba(255,255,255,.5) 50%,
+        rgba(255,255,255,0) 65%,
+        transparent 90%
+    );
+
+    transform: translateX(-130%);
+    animation: brilhoSelo 2.4s linear infinite;
+}
+
+/* hover mais vivo */
+.noticia.noticia-interesse:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 28px rgba(57, 83, 164, .24),
+        0 0 0 1px rgba(83, 104, 232, .20);
+}
+
+/* pequeno destaque na imagem */
+.noticia-interesse .foto-noticia {
+    filter: saturate(1.05) contrast(1.02);
+}
+
+/* ==========================================
+   PERSONALIZAÇÕES TEMÁTICAS
+   ========================================== */
+
+/* NATAL */
+.moldura-natal .noticia-interesse {
+    --interesse-cor1: #b62f41;
+    --interesse-cor2: #d8ac4e;
+    --interesse-fundo: #fff3e0;
+    --interesse-ornamento: "🎄";
+    --interesse-selo-prefixo: "🎄";
+    box-shadow:
+        0 10px 28px rgba(123, 34, 47, .18),
+        0 0 18px rgba(214, 174, 85, .14);
+}
+
+.moldura-natal .noticia-interesse::after {
+    background: #173b31;
+    color: #f6d889;
+    border-color: #d8ac4e;
+}
+
+.moldura-natal .noticia-interesse .selo-interesse {
+    background: linear-gradient(135deg, #fff3e0, #fffaf3);
+    color: #9f2333;
+}
+
+.moldura-natal .noticia-interesse .noticia-texto::after {
+    content: "❄ ❄";
+    position: absolute;
+    top: 12px;
+    right: 42px;
+    font-size: 11px;
+    color: #8fb8d8;
+    opacity: .85;
+    pointer-events: none;
+    animation: neveSutil 3.2s ease-in-out infinite;
+}
+
+/* HALLOWEEN */
+.moldura-halloween .noticia-interesse {
+    --interesse-cor1: #7f3ec7;
+    --interesse-cor2: #ea7b28;
+    --interesse-fundo: #f9ecff;
+    --interesse-ornamento: "🎃";
+    --interesse-selo-prefixo: "🎃";
+    box-shadow:
+        0 10px 28px rgba(73, 26, 99, .22),
+        0 0 18px rgba(234, 123, 40, .16);
+}
+
+.moldura-halloween .noticia-interesse::after {
+    background: #281a34;
+    color: #ffbd72;
+    border-color: #ea7b28;
+}
+
+.moldura-halloween .noticia-interesse .selo-interesse {
+    background: linear-gradient(135deg, #fff0e4, #f8eafe);
+    color: #6b2caf;
+}
+
+.moldura-halloween .noticia-interesse .noticia-texto::after {
+    content: "🕸️";
+    position: absolute;
+    top: 8px;
+    right: 45px;
+    font-size: 16px;
+    opacity: .9;
+    pointer-events: none;
+    animation: balancoHalloween 2.6s ease-in-out infinite;
+}
+
+/* DIA DO ESTUDANTE */
+.moldura-estudante .noticia-interesse {
+    --interesse-cor1: #2457b3;
+    --interesse-cor2: #dcac33;
+    --interesse-fundo: #edf4ff;
+    --interesse-ornamento: "🎓";
+    --interesse-selo-prefixo: "🎓";
+    box-shadow:
+        0 10px 28px rgba(20, 53, 108, .18),
+        0 0 16px rgba(220, 172, 51, .14);
+}
+
+.moldura-estudante .noticia-interesse::after {
+    background: #152b4f;
+    color: #f5d77d;
+    border-color: #dcac33;
+}
+
+.moldura-estudante .noticia-interesse .selo-interesse {
+    background: linear-gradient(135deg, #edf4ff, #fffaf0);
+    color: #1f4fa3;
+}
+
+.moldura-estudante .noticia-interesse .noticia-texto::after {
+    content: "✏️";
+    position: absolute;
+    top: 11px;
+    right: 45px;
+    font-size: 14px;
+    opacity: .9;
+    pointer-events: none;
+    animation: balancoHalloween 2.5s ease-in-out infinite;
+}
+
+/* ==========================================
+   ANIMAÇÕES
+   ========================================== */
+
+@keyframes pulsoSelo {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow:
+            0 3px 10px rgba(0, 0, 0, .08),
+            0 0 0 1px rgba(255,255,255,.55) inset;
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, .12),
+            0 0 0 1px rgba(255,255,255,.55) inset,
+            0 0 14px color-mix(in srgb, var(--interesse-cor1) 25%, transparent);
+    }
+}
+
+@keyframes brilhoSelo {
+    0% {
+        transform: translateX(-130%);
+    }
+    100% {
+        transform: translateX(140%);
+    }
+}
+
+@keyframes flutuarOrnamento {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes neveSutil {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .65;
+    }
+    50% {
+        transform: translateY(4px);
+        opacity: 1;
+    }
+}
+
+@keyframes balancoHalloween {
+    0%, 100% {
+        transform: rotate(-6deg);
+    }
+    50% {
+        transform: rotate(6deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .noticia-interesse::after,
+    .noticia-interesse .selo-interesse,
+    .noticia-interesse .selo-interesse::after,
+    .moldura-natal .noticia-interesse .noticia-texto::after,
+    .moldura-halloween .noticia-interesse .noticia-texto::after,
+    .moldura-estudante .noticia-interesse .noticia-texto::after {
+        animation: none;
+    }
+}
+

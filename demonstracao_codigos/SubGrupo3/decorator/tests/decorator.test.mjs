@@ -14,6 +14,8 @@ import { noticias, obterNoticia, buscarNoticias } from '../js/home/noticias.js';
 import { PaginaPortal } from '../js/decorator/PaginaPortal.js';
 import { PaginaPortalDecorator } from '../js/decorator/PaginaPortalDecorator.js';
 
+import { DestaqueInteresseUsuarioDecorator } from '../js/decorator/DestaqueInteresseUsuarioDecorator.js';
+
 const paletas = [TemaNatalDecorator, TemaHalloweenDecorator, TemaDiaEstudanteDecorator];
 const extras = [BannerFestivoDecorator, EnfeitesBordaDecorator, AnimacaoFestivaDecorator, TextosFestivosDecorator];
 
@@ -57,7 +59,7 @@ test('cada tema compõe cinco responsabilidades e mantém uma única Home', () =
       assert.equal(html.split(`class="${classe}"`).length - 1, 1);
     }
     assert.equal(html.match(/class="particula particula-/g).length, 4);
-    assert.equal(html.match(/class="selo-festivo" data-selo-post>[^<]+/g).length, 6);
+    assert.doesNotMatch(html, /class="selo-festivo" data-selo-post>[^<]+/);
     assert.equal(DecoratorDemo.descrever([tema]).match(/Decorator\(/g).length, 5);
   }
 });
@@ -67,7 +69,7 @@ test('textos mudam nos espaços reservados, preservando títulos e categorias da
   const html = new TextosFestivosDecorator(new PaginaBasePortal(), 'natal').renderizar();
   assert.ok(html.includes('Feliz Natal, Giovanna!'));
   assert.ok(html.includes('Notícias para compartilhar'));
-  assert.ok(html.includes('🎁 NATAL'));
+  assert.ok(html.includes('data-selo>DESTAQUE</span>'));
   for (const noticia of noticias) {
     assert.ok(base.includes(noticia.titulo));
     assert.ok(html.includes(noticia.titulo));
@@ -122,3 +124,40 @@ test('busca encontra notícias por título, resumo e categoria, sem diferenciar 
   assert.equal(buscarNoticias('').length, noticias.length);
   assert.equal(buscarNoticias('assunto inexistente').length, 0);
 });
+
+
+test('destaca somente notícias de interesse da usuária', () => {
+    const pagina = new PaginaBasePortal();
+
+    const html = new DestaqueInteresseUsuarioDecorator(
+        pagina
+    ).renderizar();
+
+    // Identifica os cartões marcados pelo Decorator.
+    const idsDestacados = [
+        ...html.matchAll(
+            /<article class="noticia cartao noticia-interesse" data-noticia="([^"]+)"/g
+        )
+    ].map(resultado => resultado[1]);
+
+    assert.deepEqual(idsDestacados, [
+        'tecnologia',
+        'flauta',
+        'oficinas'
+    ]);
+
+    // Cada notícia destacada recebe seu selo.
+    assert.equal(
+        (html.match(/class="selo-interesse"/g) ?? []).length,
+        3
+    );
+
+    // Sem interesses, nenhuma notícia recebe destaque.
+    const semInteresses = new DestaqueInteresseUsuarioDecorator(
+        pagina, []
+    ).renderizar();
+
+    assert.ok(!semInteresses.includes('noticia-interesse'));
+});
+
+
