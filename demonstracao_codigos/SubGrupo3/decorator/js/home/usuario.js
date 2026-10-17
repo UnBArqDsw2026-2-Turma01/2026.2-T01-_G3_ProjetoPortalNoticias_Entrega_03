@@ -1,9 +1,3 @@
-// Usuária fictícia da demonstração logada; altere apenas aqui para personalizar o nome.
+// Usuária fictícia da demonstração.
 export const nomeUsuario = 'Giovanna';
-
-// Interesses da usuária fictícia para personalização das notícias.
-export const interessesUsuario = [
-    'tecnologia',
-    'musica',
-    'cinema'
-];
+export const interessesUsuario = ['tecnologia', 'musica', 'cinema'];

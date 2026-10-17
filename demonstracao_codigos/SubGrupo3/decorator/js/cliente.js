@@ -4,52 +4,43 @@ import { buscarNoticias, obterNoticia } from './home/noticias.js';
 const app = document.querySelector('#app');
 const formulario = document.querySelector('#temas');
 const composicao = document.querySelector('#composicao');
+const leitura = document.querySelector('#leitura');
+let temaAtivo = null;
+let comemorativoAtivo = false;
 
 function atualizar() {
-    const temaSelecionado =
-        formulario.querySelector('input[name="tema"]:checked')?.value;
-
-    const temas = temaSelecionado && temaSelecionado !== 'padrao'
-        ? [temaSelecionado]
-        : [];
-
-    const opcoes = {
-        destaqueInteresse:
-            formulario.querySelector('#destaque-interesse').checked
-    };
-
-    DecoratorDemo.main(app, temas, opcoes);
-    composicao.textContent = DecoratorDemo.descrever(temas, opcoes);
+  const selecionado = formulario.querySelector('input[name="tema"]:checked')?.value;
+  const temas = selecionado && selecionado !== 'padrao' ? [selecionado] : [];
+  const controle = formulario.querySelector('#destaque-comemorativo');
+  controle.disabled = temas.length === 0;
+  const opcoes = {
+    destaqueInteresse: formulario.querySelector('#destaque-interesse').checked,
+    destaqueComemorativo: controle.checked && !controle.disabled
+  };
+  temaAtivo = temas[0] ?? null;
+  comemorativoAtivo = opcoes.destaqueComemorativo;
+  DecoratorDemo.main(app, temas, opcoes);
+  composicao.textContent = DecoratorDemo.descrever(temas, opcoes);
 }
 
 formulario.addEventListener('change', atualizar);
-
 formulario.addEventListener('reset', event => {
-    event.preventDefault();
-
-    for (const input of formulario.querySelectorAll('input[type="radio"]')) {
-        input.checked = input.value === 'padrao';
-    }
-
-    formulario.querySelector('#destaque-interesse').checked = false;
-
-    atualizar();
+  event.preventDefault();
+  formulario.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.checked = input.value === 'padrao';
+  });
+  formulario.querySelector('#destaque-interesse').checked = false;
+  formulario.querySelector('#destaque-comemorativo').checked = false;
+  atualizar();
 });
 
-// Uma interação local da Home, preservada por delegação após trocar a composição.
 app.addEventListener('click', event => {
-    const botao = event.target.closest('.salvar');
-    if (!botao)
-        return;
-    const salvo = botao.getAttribute('aria-pressed') !== 'true';
-    botao.setAttribute('aria-pressed', String(salvo));
-    botao.setAttribute('aria-label', salvo ? 'Remover notícia dos salvos' : 'Salvar notícia');
+  const botao = event.target.closest('.salvar');
+  if (!botao) return;
+  const salvo = botao.getAttribute('aria-pressed') !== 'true';
+  botao.setAttribute('aria-pressed', String(salvo));
+  botao.setAttribute('aria-label', salvo ? 'Remover notícia dos salvos' : 'Salvar notícia');
 });
-atualizar();
-
-
-// Leitura e busca são interações da demonstração; o GoF fica nas classes de decoradores.
-const leitura = document.querySelector('#leitura');
 
 function abrirNoticia(id) {
   const noticia = obterNoticia(id);
@@ -66,11 +57,16 @@ function abrirNoticia(id) {
 }
 
 function filtrarNoticias(termo) {
-  const ids = new Set(buscarNoticias(termo).map(noticia => noticia.id));
+  const ids = new Set(buscarNoticias(termo, {
+    tema: temaAtivo, incluirComemorativas: comemorativoAtivo
+  }).map(n => n.id));
+  let encontrados = 0;
   app.querySelectorAll('[data-noticia]').forEach(cartao => {
-    cartao.hidden = !ids.has(cartao.dataset.noticia);
+    const corresponde = ids.has(cartao.dataset.noticia);
+    cartao.hidden = !corresponde;
+    if (corresponde) encontrados++;
   });
-  app.querySelector('#resultado-busca').hidden = ids.size > 0;
+  app.querySelector('#resultado-busca').hidden = encontrados > 0;
 }
 
 app.addEventListener('input', event => {
@@ -79,12 +75,11 @@ app.addEventListener('input', event => {
 
 app.addEventListener('click', event => {
   const link = event.target.closest('[data-abrir-noticia]');
-  if (link) {
-    event.preventDefault();
-    abrirNoticia(link.dataset.abrirNoticia);
-  }
+  if (link) { event.preventDefault(); abrirNoticia(link.dataset.abrirNoticia); }
   if (event.target.closest('[data-ver-todas]')) {
     app.querySelector('input[type="search"]').value = '';
     filtrarNoticias('');
   }
 });
+
+atualizar();

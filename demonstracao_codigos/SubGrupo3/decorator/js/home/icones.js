@@ -13,6 +13,7 @@ const caminhos = {
     esporte: '<ellipse cx="12" cy="12" rx="10" ry="6" transform="rotate(-45 12 12)"/><path d="m8 8 8 8m-6-7-2 2m5-1-2 2m5-1-2 2"/>',
     cultura: '<path d="M5 4 4 14q4 8 9 1l-1-10zM14 3l7 3-2 10q-2 5-5 1M7 8h1m2 1h1M7 12q2 2 3 0m6-5h1m1 2h1"/>',
     politica: '<path d="m3 8 9-6 9 6ZM3 21h18M5 10v8m5-8v8m4-8v8m5-8v8M2 19h20"/>',
+    educacao: '<path d="m2 10 10-6 10 6-10 6-10-6z"/><path d="M6 12v5c4 3 8 3 12 0v-5"/><path d="M22 10v7"/>',
     tecnologia: '<rect x="3" y="4" width="18" height="13"/><path d="M12 17v4m-5 0h10"/>',
 };
 export function icone(nome) {

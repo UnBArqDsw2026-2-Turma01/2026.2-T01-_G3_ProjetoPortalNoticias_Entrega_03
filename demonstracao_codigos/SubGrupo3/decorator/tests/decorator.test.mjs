@@ -10,11 +10,11 @@ import { EnfeitesBordaDecorator } from '../js/decorator/EnfeitesBordaDecorator.j
 import { AnimacaoFestivaDecorator } from '../js/decorator/AnimacaoFestivaDecorator.js';
 import { TextosFestivosDecorator } from '../js/decorator/TextosFestivosDecorator.js';
 
-import { noticias, obterNoticia, buscarNoticias } from '../js/home/noticias.js';
+import { noticias, noticiasComemorativas, obterNoticia, buscarNoticias } from '../js/home/noticias.js';
+import { DestaqueInteresseUsuarioDecorator } from '../js/decorator/DestaqueInteresseUsuarioDecorator.js';
+import { DestaqueComemorativoDecorator } from '../js/decorator/DestaqueComemorativoDecorator.js';
 import { PaginaPortal } from '../js/decorator/PaginaPortal.js';
 import { PaginaPortalDecorator } from '../js/decorator/PaginaPortalDecorator.js';
-
-import { DestaqueInteresseUsuarioDecorator } from '../js/decorator/DestaqueInteresseUsuarioDecorator.js';
 
 const paletas = [TemaNatalDecorator, TemaHalloweenDecorator, TemaDiaEstudanteDecorator];
 const extras = [BannerFestivoDecorator, EnfeitesBordaDecorator, AnimacaoFestivaDecorator, TextosFestivosDecorator];
@@ -126,38 +126,59 @@ test('busca encontra notícias por título, resumo e categoria, sem diferenciar 
 });
 
 
-test('destaca somente notícias de interesse da usuária', () => {
-    const pagina = new PaginaBasePortal();
-
-    const html = new DestaqueInteresseUsuarioDecorator(
-        pagina
-    ).renderizar();
-
-    // Identifica os cartões marcados pelo Decorator.
-    const idsDestacados = [
-        ...html.matchAll(
-            /<article class="noticia cartao noticia-interesse" data-noticia="([^"]+)"/g
-        )
-    ].map(resultado => resultado[1]);
-
-    assert.deepEqual(idsDestacados, [
-        'tecnologia',
-        'flauta',
-        'oficinas'
-    ]);
-
-    // Cada notícia destacada recebe seu selo.
-    assert.equal(
-        (html.match(/class="selo-interesse"/g) ?? []).length,
-        3
-    );
-
-    // Sem interesses, nenhuma notícia recebe destaque.
-    const semInteresses = new DestaqueInteresseUsuarioDecorator(
-        pagina, []
-    ).renderizar();
-
-    assert.ok(!semInteresses.includes('noticia-interesse'));
+test('interesse do usuário seleciona só as notícias correspondentes', () => {
+  const html = new DestaqueInteresseUsuarioDecorator(new PaginaBasePortal()).renderizar();
+  const ids = [...html.matchAll(/<article class="noticia cartao noticia-interesse" data-noticia="([^"]+)"/g)]
+    .map(item => item[1]);
+  assert.deepEqual(ids, ['tecnologia', 'flauta', 'oficinas']);
+  assert.equal((html.match(/class="selo-interesse"/g) ?? []).length, 3);
+  assert.ok(!new DestaqueInteresseUsuarioDecorator(new PaginaBasePortal(), []).renderizar()
+    .includes('noticia-interesse'));
 });
 
+test('comemorativo acrescenta três notícias no início, preservando as seis originais', () => {
+  for (const tema of ['natal', 'halloween', 'estudante']) {
+    const base = new PaginaBasePortal();
+    const original = base.renderizar();
+    const html = new DestaqueComemorativoDecorator(base, tema).renderizar();
+    const ids = [...html.matchAll(/<article\b[^>]*data-noticia="([^"]+)"/g)].map(x => x[1]);
+    assert.equal(ids.length, 9);
+    assert.deepEqual(ids.slice(0, 3), noticiasComemorativas.filter(n => n.tema === tema).map(n => n.id));
+    assert.equal(base.renderizar(), original);
+  }
+});
 
+test('composição de dois decorators identifica sobreposição (premium)', () => {
+  for (const tema of ['natal', 'halloween', 'estudante']) {
+    const html = DecoratorDemo.compor([tema],
+      { destaqueInteresse: true, destaqueComemorativo: true }).renderizar();
+    const cards = [...html.matchAll(/<article\b[^>]*data-noticia="([^"]+)"[\s\S]*?<\/article>/g)]
+      .map(x => x[0]);
+    assert.equal(cards.length, 9);
+    assert.equal(cards.filter(c => c.includes('noticia-comemorativa')).length, 3);
+    assert.ok(cards.some(c => c.includes('noticia-comemorativa') && c.includes('noticia-interesse')));
+    assert.equal(DecoratorDemo.descrever([tema],
+      { destaqueInteresse: true, destaqueComemorativo: true }).match(/Decorator\(/g).length, 7);
+  }
+  assert.equal(DecoratorDemo.compor().renderizar(), new PaginaBasePortal().renderizar());
+});
+
+test('notícias especiais têm texto e IDs únicos; modal consegue obter os dados', () => {
+  assert.equal(noticiasComemorativas.length, 9);
+  const todas = [obterNoticia('destaque'), ...noticias, ...noticiasComemorativas];
+  assert.equal(new Set(todas.map(n => n.id)).size, todas.length);
+  for (const noticia of noticiasComemorativas) {
+    assert.equal(obterNoticia(noticia.id), noticia);
+    assert.ok(noticia.foto && noticia.texto.length >= 2);
+  }
+});
+
+test('busca só pesquisa as notícias exibidas no tema e no modo selecionado', () => {
+  assert.equal(buscarNoticias('').length, 6);
+  assert.equal(buscarNoticias('', { tema: 'natal', incluirComemorativas: true }).length, 9);
+  assert.equal(buscarNoticias('', { tema: 'halloween', incluirComemorativas: true }).length, 9);
+  assert.ok(buscarNoticias('coral', { tema: 'natal', incluirComemorativas: true })
+    .some(n => n.id === 'coral-natal'));
+  assert.equal(buscarNoticias('coral', { tema: 'halloween', incluirComemorativas: true }).length, 0);
+  assert.equal(buscarNoticias('coral').length, 0);
+});

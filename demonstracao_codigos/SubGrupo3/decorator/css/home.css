@@ -124,8 +124,6 @@ svg {
     background: var(--fundo, #fdfbfa);
     color: var(--texto, #121212);
 }
-
-/* A paleta é herdada dos wrappers; a Home não conhece classes de temas. */
 .sidebar {
     background: var(--barra, #1b1c1e);
     color: #fff;
@@ -791,7 +789,6 @@ h1 {
     }
 }
 
-/* Camadas festivas: os elementos absolutos ficam nas margens, fora dos conteúdos. */
 .banner-tema {
     display: flex;
     align-items: center;
@@ -1012,7 +1009,6 @@ h1 {
     }
 }
 
-/* Notícias demonstrativas: busca e modal de leitura */
 [hidden] {
     display: none !important;
 }
@@ -1094,433 +1090,222 @@ h1 {
     background: #8a3c9b;
 }
 
-
-/* ==========================================
-   DECORATOR — DESTAQUE DE INTERESSE
-   ========================================== */
+.categoria.educacao, .avatar.educacao { background: #2457b3; }
 
 .noticia.noticia-interesse {
-    --interesse-cor1: #5368e8;
-    --interesse-cor2: #25b5d5;
-    --interesse-fundo: #eef3ff;
-
+    --interesse-cor1: #5269df;
+    --interesse-cor2: #28b5cd;
+    --interesse-fundo: #eef4ff;
+    --interesse-emoji: "✨";
     position: relative;
-    box-shadow: 0 6px 20px rgba(57, 83, 164, .16);
+    isolation: isolate;
+    box-shadow: 0 6px 21px rgba(67, 86, 173, .20);
 }
 
-/* Moldura em degradê, sem modificar o tamanho do cartão */
 .noticia-interesse::before {
     content: "";
     position: absolute;
     inset: 0;
     border: 3px solid transparent;
     border-radius: inherit;
-
-    background: linear-gradient(
-        135deg,
-        var(--interesse-cor1),
-        var(--interesse-cor2) 45%,
-        var(--interesse-cor1)
-    ) border-box;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
+    background: linear-gradient(135deg, var(--interesse-cor1), var(--interesse-cor2) 45%, var(--interesse-cor1)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-
-    mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
-
+    z-index: 3;
     pointer-events: none;
-    z-index: 2;
 }
 
-/* Pequeno ornamento na transição entre foto e conteúdo */
 .noticia-interesse::after {
-    content: "✦";
+    content: var(--interesse-emoji);
     position: absolute;
-    right: 12px;
-    top: 119px;
-
-    width: 29px;
-    height: 29px;
+    top: 117px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
     display: grid;
     place-items: center;
-
-    border-radius: 50%;
+    background: #fff;
     border: 2px solid var(--interesse-cor1);
-    background: var(--cartao, #fff);
-    color: var(--interesse-cor1);
-
-    font-size: 17px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
-
+    border-radius: 50%;
+    box-shadow: 0 3px 13px #0003;
+    font-size: 19px;
+    line-height: 1;
+    z-index: 4;
     pointer-events: none;
-    z-index: 3;
+    animation: detalheFlutua 3.2s ease-in-out infinite;
 }
 
-/* Selo identificador */
 .noticia-interesse .selo-interesse {
     display: inline-flex;
     align-items: center;
-
-    margin-top: 9px;
-    padding: 5px 10px;
-    border-radius: 999px;
-
-    background: var(--interesse-fundo);
-    color: var(--interesse-cor1);
+    gap: 5px;
     border: 1px solid var(--interesse-cor1);
-
+    border-radius: 999px;
+    padding: 6px 10px;
+    margin: 8px 0 2px;
+    background: var(--interesse-fundo);
+    color: #243d85;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .3px;
-}
-
-/* Efeito de profundidade ao passar o mouse */
-.noticia.noticia-interesse:hover {
-    box-shadow: 0 9px 26px rgba(57, 83, 164, .24);
-}
-
-/* ==========================================
-   DECORATOR — DESTAQUE DE INTERESSE
-   REFINADO
-   ========================================== */
-
-.noticia.noticia-interesse {
-    --interesse-cor1: #5368e8;
-    --interesse-cor2: #25b5d5;
-    --interesse-fundo: #eef3ff;
-    --interesse-ornamento: "✨";
-    --interesse-selo-prefixo: "✨";
-
-    position: relative;
-    overflow: hidden;
-    box-shadow:
-        0 8px 24px rgba(57, 83, 164, .18),
-        0 0 0 1px rgba(83, 104, 232, .12);
-    transform-origin: center;
-}
-
-/* Moldura mais rica */
-.noticia-interesse::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 3px solid transparent;
-    border-radius: inherit;
-    pointer-events: none;
-    z-index: 2;
-
-    background:
-        linear-gradient(135deg,
-            var(--interesse-cor1),
-            var(--interesse-cor2) 40%,
-            var(--interesse-cor1) 100%) border-box;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-
-    mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-}
-
-/* Ornamento principal do card */
-.noticia-interesse::after {
-    content: var(--interesse-ornamento);
-    position: absolute;
-    right: 12px;
-    top: 118px;
-
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .95);
-    border: 2px solid var(--interesse-cor1);
-    color: var(--interesse-cor1);
-
-    font-size: 18px;
-    line-height: 1;
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, .14),
-        0 0 14px color-mix(in srgb, var(--interesse-cor1) 35%, transparent);
-
-    pointer-events: none;
-    z-index: 4;
-
-    animation: flutuarOrnamento 2.8s ease-in-out infinite;
-}
-
-/* brilho interno suave do card */
-.noticia-interesse .noticia-texto {
-    position: relative;
-}
-
-.noticia-interesse .noticia-texto::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0 0 12px 12px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: .55;
-
-    background:
-        radial-gradient(circle at top right,
-            color-mix(in srgb, var(--interesse-cor2) 18%, transparent) 0%,
-            transparent 48%);
-}
-
-/* selo mais evidente */
-.noticia-interesse .selo-interesse {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-
-    margin-top: 10px;
-    margin-bottom: 2px;
-    padding: 6px 12px;
-    border-radius: 999px;
-
-    background: linear-gradient(135deg, var(--interesse-fundo), #ffffff);
-    color: var(--interesse-cor1);
-    border: 1px solid color-mix(in srgb, var(--interesse-cor1) 55%, white);
-
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: .4px;
-    text-transform: uppercase;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, .08),
-        0 0 0 1px rgba(255,255,255,.55) inset;
-
-    animation: pulsoSelo 1.9s ease-in-out infinite;
-    z-index: 1;
+    box-shadow: 0 0 0 2px #fff6 inset, 0 0 14px #5269df22;
+    animation: seloPulsoSuave 2.8s ease-in-out infinite;
 }
 
 .noticia-interesse .selo-interesse::before {
-    content: var(--interesse-selo-prefixo);
+    content: var(--interesse-emoji);
     font-size: 12px;
-    line-height: 1;
 }
 
-.noticia-interesse .selo-interesse::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-
-    background: linear-gradient(
-        120deg,
-        transparent 10%,
-        rgba(255,255,255,.0) 35%,
-        rgba(255,255,255,.5) 50%,
-        rgba(255,255,255,0) 65%,
-        transparent 90%
-    );
-
-    transform: translateX(-130%);
-    animation: brilhoSelo 2.4s linear infinite;
-}
-
-/* hover mais vivo */
 .noticia.noticia-interesse:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        0 12px 28px rgba(57, 83, 164, .24),
-        0 0 0 1px rgba(83, 104, 232, .20);
+    box-shadow: 0 9px 28px rgba(67, 86, 173, .27);
 }
 
-/* pequeno destaque na imagem */
-.noticia-interesse .foto-noticia {
-    filter: saturate(1.05) contrast(1.02);
-}
-
-/* ==========================================
-   PERSONALIZAÇÕES TEMÁTICAS
-   ========================================== */
-
-/* NATAL */
 .moldura-natal .noticia-interesse {
-    --interesse-cor1: #b62f41;
-    --interesse-cor2: #d8ac4e;
-    --interesse-fundo: #fff3e0;
-    --interesse-ornamento: "🎄";
-    --interesse-selo-prefixo: "🎄";
-    box-shadow:
-        0 10px 28px rgba(123, 34, 47, .18),
-        0 0 18px rgba(214, 174, 85, .14);
+    --interesse-cor1: #b52e45;
+    --interesse-cor2: #dcb65b;
+    --interesse-fundo: #fff3df;
+    --interesse-emoji: "🎄";
 }
-
-.moldura-natal .noticia-interesse::after {
-    background: #173b31;
-    color: #f6d889;
-    border-color: #d8ac4e;
-}
-
-.moldura-natal .noticia-interesse .selo-interesse {
-    background: linear-gradient(135deg, #fff3e0, #fffaf3);
-    color: #9f2333;
-}
-
-.moldura-natal .noticia-interesse .noticia-texto::after {
-    content: "❄ ❄";
-    position: absolute;
-    top: 12px;
-    right: 42px;
-    font-size: 11px;
-    color: #8fb8d8;
-    opacity: .85;
-    pointer-events: none;
-    animation: neveSutil 3.2s ease-in-out infinite;
-}
-
-/* HALLOWEEN */
 .moldura-halloween .noticia-interesse {
-    --interesse-cor1: #7f3ec7;
-    --interesse-cor2: #ea7b28;
-    --interesse-fundo: #f9ecff;
-    --interesse-ornamento: "🎃";
-    --interesse-selo-prefixo: "🎃";
-    box-shadow:
-        0 10px 28px rgba(73, 26, 99, .22),
-        0 0 18px rgba(234, 123, 40, .16);
+    --interesse-cor1: #783dc1;
+    --interesse-cor2: #e17a2c;
+    --interesse-fundo: #fff0df;
+    --interesse-emoji: "🎃";
 }
-
-.moldura-halloween .noticia-interesse::after {
-    background: #281a34;
-    color: #ffbd72;
-    border-color: #ea7b28;
-}
-
-.moldura-halloween .noticia-interesse .selo-interesse {
-    background: linear-gradient(135deg, #fff0e4, #f8eafe);
-    color: #6b2caf;
-}
-
-.moldura-halloween .noticia-interesse .noticia-texto::after {
-    content: "🕸️";
-    position: absolute;
-    top: 8px;
-    right: 45px;
-    font-size: 16px;
-    opacity: .9;
-    pointer-events: none;
-    animation: balancoHalloween 2.6s ease-in-out infinite;
-}
-
-/* DIA DO ESTUDANTE */
 .moldura-estudante .noticia-interesse {
     --interesse-cor1: #2457b3;
-    --interesse-cor2: #dcac33;
-    --interesse-fundo: #edf4ff;
-    --interesse-ornamento: "🎓";
-    --interesse-selo-prefixo: "🎓";
-    box-shadow:
-        0 10px 28px rgba(20, 53, 108, .18),
-        0 0 16px rgba(220, 172, 51, .14);
+    --interesse-cor2: #dfb950;
+    --interesse-fundo: #eef5ff;
+    --interesse-emoji: "🎓";
+}
+.moldura-natal .noticia-interesse::after { background: #173b31; border-color: #dcb65b; }
+.moldura-halloween .noticia-interesse::after { background: #291732; border-color: #ef9640; }
+.moldura-estudante .noticia-interesse::after { background: #152b4f; border-color: #dfb950; }
+
+.noticia.noticia-comemorativa {
+    --comemorativa-bg: #173d31;
+    --comemorativa-bg2: #255143;
+    --comemorativa-acent: #e6c676;
+    --comemorativa-emoji: "🎄";
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 7px 22px #132d2a35;
 }
 
-.moldura-estudante .noticia-interesse::after {
-    background: #152b4f;
-    color: #f5d77d;
-    border-color: #dcac33;
+.noticia[data-comemoracao="halloween"] {
+    --comemorativa-bg: #281735;
+    --comemorativa-bg2: #3c2351;
+    --comemorativa-acent: #eea65a;
+    --comemorativa-emoji: "🎃";
+}
+.noticia[data-comemoracao="estudante"] {
+    --comemorativa-bg: #152d50;
+    --comemorativa-bg2: #214979;
+    --comemorativa-acent: #e4c369;
+    --comemorativa-emoji: "🎓";
 }
 
-.moldura-estudante .noticia-interesse .selo-interesse {
-    background: linear-gradient(135deg, #edf4ff, #fffaf0);
-    color: #1f4fa3;
+.noticia-comemorativa .foto-noticia {
+    filter: saturate(1.11) contrast(1.04);
 }
 
-.moldura-estudante .noticia-interesse .noticia-texto::after {
-    content: "✏️";
+.noticia-comemorativa .noticia-texto {
+    color: #fffaf1;
+    background:
+        radial-gradient(circle at 95% 8%, #ffffff1b 0, transparent 38%),
+        linear-gradient(145deg, var(--comemorativa-bg2), var(--comemorativa-bg) 72%);
+}
+.noticia-comemorativa .noticia-texto .categoria {
+    box-shadow: 0 0 0 1px #ffffff55;
+}
+.noticia-comemorativa h3 a,
+.noticia-comemorativa h3 a:hover,
+.noticia-comemorativa .resumo-noticia,
+.noticia-comemorativa footer strong,
+.noticia-comemorativa footer > span {
+    color: #fffaf1;
+}
+.noticia-comemorativa .resumo-noticia { opacity: .84; }
+.noticia-comemorativa footer > span { opacity: .75; }
+.noticia-comemorativa .salvar { color: #fffaf1; }
+
+.noticia-comemorativa .selo-comemorativo {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    padding: 6px 10px;
+    margin-top: 9px;
+    border-radius: 999px;
+    border: 1px solid var(--comemorativa-acent);
+    color: #211b1f;
+    background: linear-gradient(115deg, #fff8df, var(--comemorativa-acent));
+    box-shadow: 0 2px 9px #0003;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: .15px;
+}
+
+.noticia-comemorativa:not(.noticia-interesse)::before {
+    content: "";
     position: absolute;
-    top: 11px;
-    right: 45px;
-    font-size: 14px;
-    opacity: .9;
+    z-index: 3;
+    inset: 0;
+    border: 3px solid var(--comemorativa-acent);
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 2px #ffffff33;
     pointer-events: none;
-    animation: balancoHalloween 2.5s ease-in-out infinite;
+}
+.noticia-comemorativa:not(.noticia-interesse)::after {
+    content: var(--comemorativa-emoji);
+    position: absolute;
+    right: 10px;
+    top: 118px;
+    z-index: 4;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--comemorativa-acent);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--comemorativa-bg);
+    box-shadow: 0 2px 12px #0007;
+    font-size: 18px;
+    pointer-events: none;
 }
 
-/* ==========================================
-   ANIMAÇÕES
-   ========================================== */
-
-@keyframes pulsoSelo {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow:
-            0 3px 10px rgba(0, 0, 0, .08),
-            0 0 0 1px rgba(255,255,255,.55) inset;
-    }
-    50% {
-        transform: scale(1.03);
-        box-shadow:
-            0 4px 12px rgba(0, 0, 0, .12),
-            0 0 0 1px rgba(255,255,255,.55) inset,
-            0 0 14px color-mix(in srgb, var(--interesse-cor1) 25%, transparent);
-    }
+.noticia.noticia-comemorativa.noticia-interesse {
+    --interesse-cor1: #ffdb78;
+    --interesse-cor2: #fff9e9;
+    --interesse-fundo: #fff2c4;
+    --interesse-emoji: "🌟";
+    box-shadow: 0 0 0 2px #ffe7a7, 0 0 24px #f1bf6599, 0 9px 25px #19182f55;
+    animation: premiumAura 3.8s ease-in-out infinite;
 }
-
-@keyframes brilhoSelo {
-    0% {
-        transform: translateX(-130%);
-    }
-    100% {
-        transform: translateX(140%);
-    }
+.noticia-comemorativa.noticia-interesse::before { border-width: 4px; }
+.noticia-comemorativa.noticia-interesse::after {
+    border: 2px solid #fff0bf;
+    background: #765520;
+    box-shadow: 0 0 0 3px #e5b54d, 0 0 14px #fae4a0;
 }
-
-@keyframes flutuarOrnamento {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-4px);
-    }
+.noticia-comemorativa.noticia-interesse .selo-interesse {
+    color: #543b09;
+    border-color: #cf9f3b;
+    background: linear-gradient(105deg, #fffdf1, #ffdda0);
+    box-shadow: 0 0 14px #f7d87c88;
 }
+.noticia-comemorativa.noticia-interesse .selo-interesse::before { content: "🌟"; }
+.noticia-comemorativa.noticia-interesse .selo-comemorativo { margin-bottom: 1px; }
 
-@keyframes neveSutil {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: .65;
-    }
-    50% {
-        transform: translateY(4px);
-        opacity: 1;
-    }
+@keyframes detalheFlutua { 0%, 100% {transform: translateY(0)} 50% {transform: translateY(-4px)} }
+@keyframes seloPulsoSuave { 0%,100% {filter: brightness(1)} 50% {filter: brightness(1.09)} }
+@keyframes premiumAura {
+    0%,100% {box-shadow: 0 0 0 2px #ffe7a7, 0 0 16px #f1bf6570, 0 9px 25px #19182f55}
+    50% {box-shadow: 0 0 0 2px #ffe7a7, 0 0 29px #f1bf65bb, 0 9px 25px #19182f55}
 }
-
-@keyframes balancoHalloween {
-    0%, 100% {
-        transform: rotate(-6deg);
-    }
-    50% {
-        transform: rotate(6deg);
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .noticia-interesse::after,
-    .noticia-interesse .selo-interesse,
-    .noticia-interesse .selo-interesse::after,
-    .moldura-natal .noticia-interesse .noticia-texto::after,
-    .moldura-halloween .noticia-interesse .noticia-texto::after,
-    .moldura-estudante .noticia-interesse .noticia-texto::after {
-        animation: none;
-    }
+    .noticia-interesse::after, .noticia-interesse .selo-interesse,
+    .noticia.noticia-comemorativa.noticia-interesse { animation: none; }
 }
-
