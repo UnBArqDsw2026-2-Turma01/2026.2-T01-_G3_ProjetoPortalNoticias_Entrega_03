@@ -12,7 +12,7 @@ class ConfiguracaoComunidade {
 }
 
 class CriadorDeComunidade {
-  constructor(factory) {
+  constructor(factory) {  
     this.factory = factory;
     this.passos = [];
   }

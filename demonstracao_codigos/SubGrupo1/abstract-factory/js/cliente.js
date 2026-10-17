@@ -29,27 +29,27 @@ grupoFamilias.innerHTML = Object.entries(CATEGORIAS)
 
 const NOTICIAS_POR_FAMILIA = {
   tecnologia: [
-    { titulo: "Nova empresa de tecnologia muda o mercado", selo: "Tecnologia" },
-    { titulo: "Gatinhos injetam bugs nos servidores da amazon", selo: "Tecnologia" },
+    { titulo: "Nova empresa de tecnologia muda o mercado", selo: "Tecnologia", imagem: "img/noticia-tecnologia-empresa.jpg" },
+    { titulo: "Gatinhos injetam bugs nos servidores da amazon", selo: "Tecnologia", imagem: "img/noticia-tecnologia-gatinhos.jpg" },
   ],
   esportes: [
-    { titulo: "Remo brasileiro conquista vaga na final do mundial", selo: "Esportes" },
-    { titulo: "Campeonato candango define semifinalistas", selo: "Esportes" },
+    { titulo: "Remo contra o Fluminense já está marcado para a próxima quinta", selo: "Esportes", imagem: "img/noticia-esportes-remo.jpg" },
+    { titulo: "Nas olimpíadas a pergunta é: qual o verdadeiro poder das bolas?", selo: "Esportes", imagem: "img/noticia-esportes-tenis.jpg" },
   ],
   cultura: [
-    { titulo: "Festival de rua movimenta o Centro neste fim de semana", selo: "Cultura" },
-    { titulo: "Quem faz aula de flauta terça-feira?", selo: "Cultura" },
+    { titulo: "Festival de rua movimenta o Centro neste fim de semana", selo: "Cultura", imagem: "img/noticia-cultura-festival.jpg" },
+    { titulo: "Quem faz aula de flauta terça-feira?", selo: "Cultura", imagem: "img/noticia-cultura-flauta.jpg" },
   ],
   politica: [
-    { titulo: "Debate coloca diferentes opiniões em confronto", selo: "Política" },
-    { titulo: "Dia das eleições chegando: o Brasil que queremos", selo: "Política" },
+    { titulo: "Debate coloca diferentes opiniões em confronto", selo: "Política", imagem: "img/noticia-politica-debate.jpg" },
+    { titulo: "Dia das eleições chegando: o Brasil que queremos", selo: "Política", imagem: "img/noticia-politica-eleicoes.jpg" },
   ],
 };
 
 function renderizarComunidade(config, familia) {
   const noticias = NOTICIAS_POR_FAMILIA[familia].map((n) => `
         <article class="noticia-card">
-          <div class="noticia-card__imagem"></div>
+          <img class="noticia-card__imagem" src="${escaparHtml(n.imagem)}" alt="">
           <div class="noticia-card__corpo">
             <span class="noticia-card__selo">${escaparHtml(n.selo)}</span>
             <h4>${escaparHtml(n.titulo)}</h4>

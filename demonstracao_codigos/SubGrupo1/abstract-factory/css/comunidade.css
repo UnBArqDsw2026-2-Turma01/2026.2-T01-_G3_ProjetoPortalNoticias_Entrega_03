@@ -107,8 +107,11 @@ body {
 }
 
 .noticia-card__imagem {
+  display: block;
+  flex-shrink: 0;
   width: 40%;
   min-height: 130px;
+  object-fit: cover;
   background: linear-gradient(135deg, var(--cor-primaria), #0d1117);
 }
 
