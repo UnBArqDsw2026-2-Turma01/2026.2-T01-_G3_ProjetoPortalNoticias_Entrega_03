@@ -1,29 +1,44 @@
-# Histórico de Rascunho — Memento
+# Demonstração Next.js — State + Chain of Responsibility
 
-Demonstração independente do padrão Memento aplicada ao histórico de uma notícia. Os papéis são:
-
-- `DraftMemento`: guarda uma cópia do estado da notícia e o instante do snapshot.
-- `NoticiaEditorOriginator`: cria snapshots e restaura um estado salvo.
-- `HistoricoRascunhosCaretaker`: mantém as pilhas de desfazer e refazer sem alterar o conteúdo do snapshot.
-
-O editor permite alterar título e conteúdo, salvar versões e navegar entre elas com Undo e Redo. O autor e o identificador da notícia também fazem parte do estado guardado.
-
-## Identidade visual
-
-A tela segue o protótipo do portal demonstrado pelo SubGrupo 1: sidebar escura, fundo branco, tipografia Inter e vermelho para ações e destaques. Ela reutiliza o logo existente em `../SubGrupo1/singleton/assets/`, sem duplicar o arquivo de imagem.
+Esta pasta contém uma aplicação **Next.js 14 com React e App Router** para demonstrar a adaptação **State combinado com Chain of Responsibility** no fluxo de publicação do Portal Burburinho.
 
 ## Como executar
 
-Não é necessário instalar dependências nem iniciar um servidor:
+Instale as dependências e inicie o servidor de desenvolvimento:
 
-1. Abra a pasta `demonstracao_codigos/subGrupo2` no Explorador de Arquivos.
-2. Abra `index.html` com duplo clique (ou escolha seu navegador).
-3. Digite um título e conteúdo, clique em **Salvar Snapshot**, faça outra alteração e salve novamente. Use **Desfazer** e **Refazer** para navegar entre as versões.
-
-No PowerShell, a partir da raiz do repositório, também é possível abrir a página com:
-
-```powershell
-Start-Process .\demonstracao_codigos\subGrupo2\index.html
+```bash
+npm install
+npm run dev
 ```
 
-Os arquivos desta pasta formam uma demonstração executável sem build. A integração React/TypeScript do projeto fica em `app/page.tsx` e a implementação tipada da regra de negócio em `lib/memento.ts`.
+Depois, abra `http://localhost:3000`. Para gerar uma versão de produção, use `npm run build` e `npm start`.
+
+## Roteiro para o vídeo
+
+1. Clique em **Submeter para análise**: o `DraftState` muda para `ReviewState` e delega a validação para a Chain.
+2. Observe no **Log da Chain** a ordem `ConteudoObrigatorioHandler → FonteHandler → RevisaoEditorialHandler → ModeracaoHandler`.
+3. No estado **Em análise**, demonstre **Aprovar postagem** e depois **Encaminhar para produção** e **Publicar no portal**.
+4. Reinicie e demonstre **Rejeitar postagem**.
+5. Reinicie, submeta novamente e demonstre **Solicitar ajustes**; em seguida clique em **Devolver para análise** para comprovar o retorno ao estado de análise.
+
+## Correspondência com os papéis
+
+- `Publication`: contexto que mantém o estado atual e encaminha ações.
+- `PublicationState` e estados concretos: encapsulam as transições permitidas.
+- `ValidationHandler`: interface/base dos handlers da Chain.
+- `createValidationChain`: conecta os handlers na ordem da validação.
+- `runValidationChain`: ponto em que o State delega a responsabilidade à Chain.
+
+## O que é verificado na execução
+
+- O contexto da notícia é exibido com título, resumo, autora e localização.
+- O estado atual controla quais ações aparecem na tela e impede transições não permitidas.
+- O log registra a delegação do State e cada encaminhamento da Chain.
+- A execução válida percorre os quatro handlers na ordem configurada.
+- O fluxo aprovado chega a `Publicada`.
+- O fluxo rejeitado chega a `Rejeitada`.
+- O fluxo de ajustes passa por `Ajustes necessários` e retorna para `Em análise`.
+
+Os cenários são testes manuais guiados pela interface para a demonstração em vídeo. A implementação atual demonstra uma Chain válida, na qual todos os handlers aprovam; a rejeição é uma decisão explícita da etapa de análise.
+
+O código React e as classes dos padrões estão em [`app/page.jsx`](./app/page.jsx), o layout e metadados em [`app/layout.jsx`](./app/layout.jsx), e os estilos globais em [`styles.css`](./styles.css).
