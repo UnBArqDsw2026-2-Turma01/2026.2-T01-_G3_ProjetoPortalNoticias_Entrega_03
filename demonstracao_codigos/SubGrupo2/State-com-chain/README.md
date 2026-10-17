@@ -15,11 +15,9 @@ Depois, abra `http://localhost:3000`. Para gerar uma versão de produção, use 
 
 ## Roteiro para o vídeo
 
-1. Clique em **Submeter para análise**: o `DraftState` muda para `ReviewState` e delega a validação para a Chain.
-2. Observe no **Log da Chain** a ordem `ConteudoObrigatorioHandler → FonteHandler → RevisaoEditorialHandler → ModeracaoHandler`.
-3. No estado **Em análise**, demonstre **Aprovar postagem** e depois **Encaminhar para produção** e **Publicar no portal**.
-4. Reinicie e demonstre **Rejeitar postagem**.
-5. Reinicie, submeta novamente e demonstre **Solicitar ajustes**; em seguida clique em **Devolver para análise** para comprovar o retorno ao estado de análise.
+1. Preencha os dados e clique em **Submeter para análise**: a etapa **Revise** abre um modal de confirmação com o conteúdo preenchido.
+2. No modal, clique em **Continuar e submeter** para que o `Rascunho` mude para `EmModeracao` e delegue a validação para a Chain. Observe no **Log da Chain** a ordem `ConteudoObrigatorioHandler → FonteHandler → RevisaoEditorialHandler → ModeracaoHandler`.
+3. No estado **Em moderação**, demonstre **Aprovar postagem** para mudar para `Publicada`, ou **Rejeitar postagem** para registrar a decisão sem criar um estado que não existe no diagrama.
 
 ## Correspondência com os papéis
 
@@ -36,8 +34,7 @@ Depois, abra `http://localhost:3000`. Para gerar uma versão de produção, use 
 - O log registra a delegação do State e cada encaminhamento da Chain.
 - A execução válida percorre os quatro handlers na ordem configurada.
 - O fluxo aprovado chega a `Publicada`.
-- O fluxo rejeitado chega a `Rejeitada`.
-- O fluxo de ajustes passa por `Ajustes necessários` e retorna para `Em análise`.
+- A rejeição é registrada como uma decisão da análise; o diagrama não define `Rejeitada` como estado concreto.
 
 Os cenários são testes manuais guiados pela interface para a demonstração em vídeo. A implementação atual demonstra uma Chain válida, na qual todos os handlers aprovam; a rejeição é uma decisão explícita da etapa de análise.
 
