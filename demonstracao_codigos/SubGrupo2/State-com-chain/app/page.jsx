@@ -1,8 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Postagem, runValidationChain } from "./pattern";
 
 const steps = ["Conte o que aconteceu", "Revise", "Envie"];
+const patternCode = [
+  {
+    title: "Postagem + EstadoBase",
+    code: `class Postagem {
+  mudarEstado(estado) {
+    this.estado = estado;
+    this.estado.setContexto(this);
+  }
+}
+
+class EstadoBase {
+  avancar() {
+    if (this.proximo) this.contexto.mudarEstado(this.proximo);
+  }
+  retornar() {
+    if (this.aoRejeitar) this.contexto.mudarEstado(this.aoRejeitar);
+  }
+}`,
+  },
+  {
+    title: "Estados concretos do diagrama",
+    code: `class Rascunho extends EstadoBase {
+  submeter() { this.avancar(); }
+}
+
+class EmModeracao extends EstadoBase {
+  aprovar() { this.avancar(); }
+  rejeitar() { this.retornar(); }
+}
+
+class Publicada extends EstadoBase {}`,
+  },
+  {
+    title: "Ligações entre os estados",
+    code: `rascunho.setNext(emModeracao);
+emModeracao.setNext(publicada);
+emModeracao.setOnReject(rascunho);`,
+  },
+  {
+    title: "Chain de validação",
+    code: `obrigatorio
+  .setNext(fonte)
+  .setNext(revisaoEditorial)
+  .setNext(moderacao);
+
+runValidationChain(postagem);`,
+  },
+];
 
 export default function DemoPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,7 +64,9 @@ export default function DemoPage() {
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const [publicationState, setPublicationState] = useState("draft");
   const [moderationDecision, setModerationDecision] = useState(null);
+  const [lastDecision, setLastDecision] = useState(null);
   const [chainLog, setChainLog] = useState([]);
+  const postagem = useRef(new Postagem());
 
   const stateLabels = {
     draft: "Rascunho",
@@ -65,25 +116,39 @@ export default function DemoPage() {
   function submitPublication() {
     setIsReviewOpen(false);
     setStep(3);
+    postagem.current.title = title;
+    postagem.current.summary = summary;
+    postagem.current.category = category;
+    runValidationChain(postagem.current);
+    postagem.current.submeter();
     setPublicationState("moderation");
+    setModerationDecision(null);
+    setLastDecision(null);
     setChainLog([
       "State: DraftState → ReviewState",
       "ConteudoObrigatorioHandler: conteúdo obrigatório aprovado",
       "FonteHandler: fonte validada",
       "RevisaoEditorialHandler: revisão editorial aprovada",
       "ModeracaoHandler: conteúdo liberado para análise",
+      "Publication.registrarAnalise: análise registrada",
     ]);
     setFeedback("A publicação foi enviada para análise. Escolha o próximo passo da demonstração.");
   }
 
   function transitionTo(nextState, message) {
+    if (nextState === "published") postagem.current.aprovar();
     setPublicationState(nextState);
+    setModerationDecision(null);
     setFeedback(message);
   }
 
   function rejectPublication() {
+    postagem.current.rejeitar();
+    setPublicationState("draft");
+    setStep(1);
     setModerationDecision("rejected");
-    setFeedback("Postagem rejeitada durante a moderação. O diagrama não modela a rejeição como um estado concreto.");
+    setLastDecision("rejected");
+    setFeedback("Postagem rejeitada. O estado EmModeracao retornou para Rascunho; revise e submeta novamente quando quiser.");
   }
 
   function restartDemo() {
@@ -94,6 +159,7 @@ export default function DemoPage() {
     setFeedback("");
     setPublicationState("draft");
     setModerationDecision(null);
+    setLastDecision(null);
     setChainLog([]);
   }
 
@@ -139,6 +205,7 @@ export default function DemoPage() {
           </ol>
 
           {publicationState === "draft" && <form className="publication-form" onSubmit={(event) => { event.preventDefault(); advance(); }}>
+            {lastDecision === "rejected" && <div className="decision-feedback" role="status"><strong>Postagem rejeitada</strong><span>O fluxo retornou para Rascunho. Você pode editar os dados e submeter novamente.</span></div>}
             <label htmlFor="category">Escolha um Conteúdo</label>
             <select id="category" value={category} onChange={(event) => setCategory(event.target.value)} disabled={step > 1}>
               <option value="">Selecione o tipo do seu conteúdo</option>
@@ -166,12 +233,6 @@ export default function DemoPage() {
                   {moderationDecision === "rejected" ? "Decisão: Rejeitada" : stateLabels[publicationState]}
                 </span>
               </div>
-              {moderationDecision === "rejected" && (
-                <div className="workflow-decision workflow-decision--rejected" role="status">
-                  <strong>Postagem rejeitada</strong>
-                  <span>A moderação encerrou esta execução. O estado do diagrama continua sendo <code>EmModeracao</code>; a rejeição é a decisão registrada.</span>
-                </div>
-              )}
               <div className="workflow-publication">
                 <span className="workflow-publication__category">{category}</span>
                 <h3>{title}</h3>
@@ -271,7 +332,23 @@ export default function DemoPage() {
 
               <section className="details-card details-card--note">
                 <h3>Resultado esperado</h3>
-                <p>{moderationDecision === "rejected" ? "A decisão de rejeição foi registrada em Em moderação. Reinicie a demonstração para executar outro caminho." : expectedResults[publicationState]}</p>
+                <p>{lastDecision === "rejected" ? "A rejeição acionou setOnReject e retornou a postagem para Rascunho. Edite o conteúdo ou submeta novamente." : expectedResults[publicationState]}</p>
+              </section>
+
+              <section className="details-card code-showcase">
+                <div className="details-card__heading">
+                  <h3>Código correspondente ao diagrama</h3>
+                  <span className="details-muted">app/pattern.js</span>
+                </div>
+                <p>Use estes trechos durante o vídeo para relacionar cada elemento UML à implementação executável.</p>
+                <div className="code-showcase__list">
+                  {patternCode.map(({ title, code }) => (
+                    <details key={title} className="code-block">
+                      <summary>{title}</summary>
+                      <pre><code>{code}</code></pre>
+                    </details>
+                  ))}
+                </div>
               </section>
             </div>
           </section>

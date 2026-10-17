@@ -51,6 +51,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .submit-button { justify-self: end; border: 0; border-radius: 8px; padding: 12px 28px; color: #fff; background: var(--accent); cursor: pointer; font-size: 13px; font-weight: 700; }
 .submit-button:hover { filter: brightness(.92); }
 .form-feedback { margin: -8px 0 0; color: var(--accent); font-size: 12px; font-weight: 600; }
+.decision-feedback { display: grid; gap: 4px; border: 1px solid #6b728055; border-radius: 9px; padding: 13px 15px; color: var(--ink); background: #6b728014; font-size: 12px; }
+.decision-feedback span { color: var(--muted); font-size: 11px; line-height: 1.45; }
 .workflow-panel { display: grid; gap: 20px; border: 1px solid #ff454b66; border-radius: 14px; padding: 24px; background: var(--field); box-shadow: 0 12px 30px #0000000b; }
 .workflow-panel__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
 .workflow-panel h2 { margin: 4px 0 0; color: var(--ink); font-size: 24px; }
@@ -108,6 +110,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .details-data div:last-child { border-bottom: 0; padding-bottom: 0; }
 .details-data dt { color: var(--muted); font-size: 11px; font-weight: 700; }
 .details-data dd { overflow-wrap: anywhere; margin: 0; color: var(--ink); font-size: 11px; }
+.code-showcase__list { display: grid; gap: 8px; margin-top: 14px; }
+.code-block { overflow: hidden; border: 1px solid color-mix(in srgb, var(--muted) 28%, transparent); border-radius: 8px; background: #121212; }
+.code-block summary { padding: 10px 12px; color: #fff; cursor: pointer; font-size: 11px; font-weight: 700; }
+.code-block pre { overflow-x: auto; margin: 0; border-top: 1px solid #ffffff1c; padding: 12px; color: #d9f99d; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; line-height: 1.55; }
 .review-modal__body { padding: 24px 28px 28px; }
 .review-modal__body > p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
 .review-modal__body .details-data { margin: 20px 0; }
