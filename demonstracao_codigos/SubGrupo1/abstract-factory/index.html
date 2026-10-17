@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burburinho · Abstract Factory de comunidades</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comunidade.css">
+</head>
+<body>
+  <aside class="navbar-espaco" aria-label="Navegação">[navbar]</aside>
+
+  <main id="conteudo" class="conteudo"></main>
+
+  <section class="painel-fabrica" aria-label="Escolha da fábrica">
+    <label class="painel-fabrica__exemplo">Comunidade de exemplo
+      <select id="exemplo"></select>
+    </label>
+    <span class="painel-fabrica__rotulo">Fábrica</span>
+    <div id="familias" class="painel-fabrica__opcoes" role="group" aria-label="Escolha da fábrica"></div>
+    <details class="painel-fabrica__passos">
+      <summary>Passos chamados na fábrica</summary>
+      <ol id="passos"></ol>
+    </details>
+  </section>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/fabricas.js"></script>
+  <script src="js/criador.js"></script>
+  <script src="js/cliente.js"></script>
+</body>
+</html>
