@@ -1,0 +1,135 @@
+INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+INFO    -  Documentation built in 1.72 seconds
+INFO    -  [19:25:01] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO    -  [19:25:01] Serving on http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/
+INFO    -  [19:26:08] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/
+INFO    -  [19:26:22] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [19:51:40] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.39 seconds
+INFO    -  [19:51:41] Reloading browsers
+INFO    -  [19:52:33] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [19:54:02] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.48 seconds
+INFO    -  [19:54:03] Reloading browsers
+INFO    -  [19:54:16] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [20:05:41] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [20:05:41] Reloading browsers
+INFO    -  [20:05:52] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [20:06:15] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [20:06:15] Reloading browsers
+INFO    -  [20:15:53] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [20:24:03] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.38 seconds
+INFO    -  [20:24:04] Reloading browsers
+INFO    -  [21:24:01] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.44 seconds
+INFO    -  [21:24:02] Reloading browsers
+INFO    -  [21:24:21] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [21:24:21] Reloading browsers
+INFO    -  [21:24:57] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.36 seconds
+INFO    -  [21:24:58] Reloading browsers
+INFO    -  [21:25:07] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [21:25:08] Reloading browsers
+INFO    -  [21:25:09] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [21:25:19] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [21:25:19] Reloading browsers
+INFO    -  [21:25:19] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [21:25:22] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [21:35:04] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [21:35:05] Reloading browsers
+WARNING -  [21:35:05] "GET /2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/assets/subGrupo2/eiki_gof_comportamental.png HTTP/1.1" code 404
+WARNING -  [21:35:05] "GET /2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/assets/subGrupo2/eiki_gof_comportamental.png HTTP/1.1" code 404
+INFO    -  [21:35:06] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+WARNING -  [21:35:09] "GET /2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/assets/subGrupo2/eiki_gof_comportamental.png HTTP/1.1" code 404
+WARNING -  [21:35:09] "GET /2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/assets/subGrupo2/eiki_gof_comportamental.png HTTP/1.1" code 404
+INFO    -  [21:35:09] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [21:36:50] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.55 seconds
+INFO    -  [21:36:51] Reloading browsers
+INFO    -  [21:36:54] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:49:43] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [22:49:43] Reloading browsers
+INFO    -  [22:49:50] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:55:07] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [22:55:08] Reloading browsers
+INFO    -  [22:55:10] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:55:12] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:55:15] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:55:21] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.34 seconds
+INFO    -  [22:55:22] Reloading browsers
+INFO    -  [22:56:21] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.42 seconds
+INFO    -  [22:56:21] Reloading browsers
+INFO    -  [22:56:22] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:56:23] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:56:24] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:57:01] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [22:57:01] Reloading browsers
+INFO    -  [22:57:01] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:57:37] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [22:57:37] Reloading browsers
+INFO    -  [22:57:38] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [22:58:25] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [22:58:26] Reloading browsers
+INFO    -  [22:58:26] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:21:04] Detected file changes
+INFO    -  Building documentation...
+INFO    -  Documentation built in 0.41 seconds
+INFO    -  [23:21:05] Reloading browsers
+INFO    -  [23:21:05] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:21:19] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:21:19] Reloading browsers
+INFO    -  [23:21:19] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:21:40] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:21:41] Reloading browsers
+INFO    -  [23:21:41] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:22:18] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:22:19] Reloading browsers
+INFO    -  [23:22:19] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:22:39] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:22:40] Reloading browsers
+INFO    -  [23:22:40] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:23:00] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:23:01] Reloading browsers
+INFO    -  [23:23:01] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:24:57] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:24:57] Reloading browsers
+INFO    -  [23:25:10] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:25:10] Reloading browsers
+INFO    -  [23:25:12] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:25:12] Reloading browsers
+INFO    -  [23:25:13] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/
+INFO    -  [23:25:28] Detected file changes
+INFO    -  Building documentation...
+INFO    -  [23:25:29] Reloading browsers
+INFO    -  [23:25:29] Browser connected: http://127.0.0.1:8000/2026.2-T01-_G3_ProjetoPortalNoticias_Entrega_03/Base/Relat%C3%B3rios/1.1.2.SubEquipe_02/

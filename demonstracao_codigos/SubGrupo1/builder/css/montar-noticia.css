@@ -1,0 +1,621 @@
+/* Página "Montar notícia" — estilo da tela "Sugerir Publicação" do protótipo.
+   As cores e fontes vêm de noticia.css (:root). */
+
+:root {
+  --vermelho-banner: #c5333e;
+  --creme: #ebe4db;
+  --cinza-borda: #979797;
+  --cinza-passo: #beb9b3;
+}
+
+.conteudo--montar {
+  padding: 0 0 120px;
+}
+
+#resultado {
+  padding: 44px var(--conteudo-margem) 0;
+}
+
+/* ---------- Banner ---------- */
+
+.banner {
+  position: relative;
+  height: 440px;
+  background: var(--vermelho-banner);
+}
+
+.banner__ilustracao {
+  position: absolute;
+  left: 8.2%;
+  top: 113px;
+  width: 459.262px;
+  max-width: 48%;
+  height: auto;
+}
+
+.banner__titulo {
+  position: absolute;
+  left: 58.1%;
+  top: 50px;
+  margin: 0;
+  color: var(--creme);
+  font-weight: 600;
+  line-height: normal;
+}
+
+.banner__sobre {
+  display: block;
+  margin-left: 3px;
+  font-size: 36.506px;
+}
+
+.banner__destaque {
+  display: block;
+  margin-top: -8px;
+  font-family: "League Gothic", "Impact", sans-serif;
+  font-size: 105.275px;
+  font-weight: 400;
+}
+
+/* ---------- Coluna do formulário ---------- */
+
+.formulario-coluna {
+  width: 693px;
+  max-width: calc(100% - 32px);
+  margin: 63px auto 0;
+}
+
+.linha-passos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 75px;
+  padding: 0;
+  list-style: none;
+  color: #000;
+  font-size: 12.252px;
+}
+
+.linha-passos li {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.linha-passos li:last-child {
+  flex: 0;
+}
+
+.linha-passos li:not(:last-child)::after {
+  content: "";
+  flex: 1;
+  height: 1.403px;
+  border-radius: 14px;
+  background: #d9d9d9;
+}
+
+.linha-passos__numero {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36.475px;
+  height: 36.475px;
+  border-radius: 50%;
+  background: var(--cinza-passo);
+  color: var(--texto-titulo);
+}
+
+.linha-passos li.ativo .linha-passos__numero {
+  background: var(--vermelho);
+  color: #fefefe;
+}
+
+.formulario,
+.revisao {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.campo__rotulo {
+  color: #000;
+  font-size: 15.762px;
+}
+
+.campo__dica {
+  color: var(--cinza-borda);
+}
+
+.formulario input[type="text"],
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--texto-titulo);
+  font: inherit;
+  font-size: 12px;
+}
+
+.formulario input[type="text"],
+.formulario select {
+  height: 32px;
+  padding: 0 19px;
+}
+
+.formulario textarea {
+  min-height: 102px;
+  padding: 12px 19px;
+  resize: vertical;
+}
+
+.formulario ::placeholder {
+  color: var(--cinza-borda);
+}
+
+.campo__select {
+  position: relative;
+}
+
+.formulario select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.campo__select::after {
+  content: "";
+  position: absolute;
+  right: 23px;
+  top: 50%;
+  width: 6px;
+  height: 10.3708px;
+  background: url("../assets/icone-seta-select.svg") no-repeat center / contain;
+  transform: translateY(-50%) rotate(90deg);
+  pointer-events: none;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 102px;
+  border: 1px dashed var(--cinza-borda);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload:hover {
+  border-color: var(--vermelho);
+}
+
+.upload__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--texto-titulo);
+  font-size: 12px;
+}
+
+.upload__texto small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cinza-borda);
+  font-size: 10px;
+}
+
+.upload--pequeno {
+  height: 64px;
+}
+
+.miniaturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.miniaturas:empty {
+  display: none;
+}
+
+.miniaturas img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Fotos do carrossel: arrastar para reordenar, ✕ para remover */
+
+.miniaturas--editaveis {
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.foto {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 150px;
+}
+
+.foto__imagem {
+  position: relative;
+  cursor: grab;
+}
+
+.foto__imagem:active {
+  cursor: grabbing;
+}
+
+.miniaturas--editaveis .foto__imagem img {
+  width: 150px;
+  height: 104px;
+}
+
+.formulario input.foto__legenda {
+  height: 28px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.foto--arrastando {
+  opacity: 0.35;
+}
+
+.foto--alvo img {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+.foto__remover {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--vermelho);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.dica-fotos {
+  margin: 0;
+  color: var(--cinza-borda);
+  font-size: 11px;
+}
+
+/* Blocos que o redator adiciona, na ordem em que vão aparecer */
+
+.lista-blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-blocos:empty {
+  display: none;
+}
+
+.bloco-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #e4dfdc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.bloco-form__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.bloco-form__acoes {
+  display: flex;
+  gap: 4px;
+}
+
+.bloco-form__acoes button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e4dfdc;
+  border-radius: 8px;
+  background: var(--fundo);
+  color: var(--texto-suave);
+}
+
+.bloco-form__acoes button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.adicionar-blocos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adicionar-blocos button {
+  padding: 6px 14px;
+  border: 1px solid var(--vermelho);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--vermelho);
+  font-size: 13px;
+}
+
+.adicionar-blocos button:hover {
+  background: var(--vermelho);
+  color: #fff;
+}
+
+.confirmacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: center;
+  color: #000;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.confirmacao input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--vermelho);
+}
+
+.link-exemplo {
+  align-self: flex-end;
+  width: 260px;
+  margin-bottom: -24px;
+}
+
+.link-exemplo select {
+  width: 100%;
+  height: 32px;
+  padding: 0 19px;
+  border: 1px solid var(--vermelho);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--vermelho);
+  font: inherit;
+  font-size: 12px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.mensagem-erro {
+  margin: 0;
+  color: var(--vermelho);
+  font-size: 13px;
+  text-align: center;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.botao {
+  height: 30.338px;
+  border-radius: 10.113px;
+  font-size: 17.697px;
+}
+
+.botao--contorno {
+  width: 141.576px;
+  border: 1px solid var(--vermelho);
+  background: transparent;
+  color: var(--vermelho);
+}
+
+.botao--cheio {
+  width: 196px;
+  border: 0;
+  background: var(--vermelho);
+  color: #fff;
+}
+
+/* ---------- Passo 2: revisão ---------- */
+
+.revisao__titulo {
+  margin: 0;
+  color: var(--texto-titulo);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.revisao__dados {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px 16px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.revisao__dados dt {
+  color: var(--cinza-borda);
+}
+
+.revisao__dados dd {
+  margin: 0;
+  color: var(--texto-titulo);
+}
+
+.revisao__dados img {
+  width: 96px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.revisao__roteiro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding-left: 24px;
+  font-size: 14px;
+}
+
+.revisao__roteiro > li {
+  padding: 12px 14px;
+  border: 1px solid #e4dfdc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.revisao__roteiro p,
+.revisao__roteiro ul,
+.revisao__roteiro .miniaturas {
+  margin: 8px 0 0;
+  font-weight: 500;
+}
+
+.tipo-bloco {
+  display: block;
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--texto-titulo);
+  color: #fff;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+}
+
+.escolha-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.escolha-builder legend {
+  margin-bottom: 14px;
+  padding: 0;
+}
+
+.escolha-builder label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #e4dfdc;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--texto-suave);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.escolha-builder label:has(input:checked) {
+  border-color: var(--vermelho);
+}
+
+.escolha-builder strong {
+  color: var(--texto-titulo);
+  font-weight: 600;
+}
+
+.escolha-builder .campo-posicao {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  cursor: default;
+}
+
+.escolha-builder select {
+  width: 100%;
+  height: 32px;
+  padding: 0 19px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--texto-titulo);
+  font: inherit;
+  font-size: 12px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.escolha-builder input {
+  accent-color: var(--vermelho);
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 900px) {
+  .banner {
+    height: 240px;
+  }
+
+  .banner__ilustracao {
+    top: 70px;
+    left: 4%;
+  }
+
+  .banner__titulo {
+    left: 55%;
+    top: 40px;
+  }
+
+  .banner__sobre {
+    font-size: 22px;
+  }
+
+  .banner__destaque {
+    font-size: 64px;
+  }
+
+  .linha-passos {
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .linha-passos li {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .linha-passos li:not(:last-child)::after {
+    display: none;
+  }
+
+  .botoes {
+    gap: 16px;
+  }
+
+  #resultado {
+    padding: 24px 16px 0;
+  }
+}

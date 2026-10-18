@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burburinho · Singleton do repositório de notícias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/singleton.css">
+</head>
+<body>
+  <!-- Barra lateral (Figma: Side Bar) -->
+  <aside class="sidebar" aria-label="Navegação">
+    <img class="sidebar__logo" src="assets/logo-burburinho.svg" width="295.764" height="191.214" alt="Burburinho">
+
+    <nav class="menu">
+      <button type="button" class="menu__item" data-ir="inicio" aria-current="page">
+        <img src="assets/icone-inicio.svg" width="17.9953" height="16.0031" alt="">
+        Início
+      </button>
+      <button type="button" class="menu__item">
+        <img src="assets/icone-explorar.svg" width="18" height="18" alt="">
+        Explorar
+      </button>
+      <button type="button" class="menu__item">
+        <img src="assets/icone-salvos.svg" width="14.625" height="20.6543" alt="">
+        Salvos
+      </button>
+      <button type="button" class="menu__item">
+        <img src="assets/icone-sugerir.svg" width="19.8" height="19.8" alt="">
+        Sugerir Publicação
+      </button>
+    </nav>
+
+    <hr class="sidebar__divisor">
+
+    <p class="sidebar__titulo">Meus Conteúdos</p>
+    <ul class="conteudos">
+      <li>
+        <button type="button" class="conteudo" data-categoria="Esporte">
+          <span class="conteudo__icone">
+            <img src="assets/circulo-esporte.svg" width="33.321" height="33.321" alt="">
+            <img class="conteudo__simbolo" src="assets/menu-esporte.svg" width="15" height="15" alt="">
+          </span>
+          Esporte
+        </button>
+      </li>
+      <li>
+        <button type="button" class="conteudo" data-categoria="Cultura">
+          <span class="conteudo__icone">
+            <img src="assets/circulo-cultura.svg" width="33.321" height="33.321" alt="">
+            <img class="conteudo__simbolo" src="assets/menu-cultura.svg" width="13.1204" height="13.126" alt="">
+          </span>
+          Cultura
+        </button>
+      </li>
+      <li>
+        <button type="button" class="conteudo" data-categoria="Política">
+          <span class="conteudo__icone">
+            <img src="assets/circulo-politica.svg" width="33.321" height="33.321" alt="">
+            <img class="conteudo__simbolo" src="assets/menu-politica.svg" width="15" height="15" alt="">
+          </span>
+          Política
+        </button>
+      </li>
+      <li id="conteudo-extra" hidden>
+        <button type="button" class="conteudo" data-categoria="Tecnologia">
+          <span class="conteudo__icone conteudo__icone--css" style="--cor: #7a42e6">
+            <img class="conteudo__simbolo" src="../builder/assets/icone-tecnologia.svg" width="15" height="10.6" alt="">
+          </span>
+          Tecnologia
+        </button>
+      </li>
+    </ul>
+    <button type="button" class="sidebar__ver-todos" id="ver-todos">Ver todos</button>
+  </aside>
+
+  <!-- Página inicial (Figma: Home Page Logado) -->
+  <main class="pagina" id="tela-inicio">
+    <header class="topo">
+      <h1 class="topo__saudacao">Bom dia, Johnn!</h1>
+      <div class="topo__acoes">
+        <button type="button" class="topo__botao" aria-label="Acessibilidade">
+          <img src="assets/icone-acessibilidade.svg" width="27.75" height="27.75" alt="">
+        </button>
+        <button type="button" class="topo__botao topo__sino" aria-label="Notificações">
+          <img src="assets/icone-sino.svg" width="24.108" height="31.4017" alt="">
+          <span class="topo__contador">3</span>
+        </button>
+        <img class="topo__perfil" src="assets/perfil.png" width="60" height="60" alt="Perfil">
+      </div>
+    </header>
+
+    <div class="home">
+      <div class="home__principal">
+        <label class="busca">
+          <img class="busca__icone" src="assets/icone-busca.svg" width="20.06" height="20.06" alt="">
+          <input type="search" placeholder="Buscar conteúdos, notícias e assuntos" aria-label="Buscar">
+        </label>
+
+        <article class="destaque" id="destaque"></article>
+
+        <div class="secao-titulo">
+          <h2>Últimas notícias</h2>
+          <button type="button" class="ver-todas">
+            Ver todas
+            <img src="assets/icone-seta.svg" width="6" height="10.3708" alt="">
+          </button>
+        </div>
+        <ul class="ultimas" id="ultimas"></ul>
+      </div>
+
+      <aside class="home__lateral">
+        <section class="cartao-lateral em-alta">
+          <h2 class="cartao-lateral__titulo">
+            <img src="assets/icone-em-alta.svg" width="26.6" height="28" alt="">
+            Em alta na sua região
+          </h2>
+          <ol class="em-alta__lista">
+            <li>Arquitetura e Desenho</li>
+            <li>Luis no BBB 27</li>
+            <li>FCTE evasão de alunos</li>
+            <li>Burburinho é o melhor site!</li>
+            <li>Falange é um bom nome gamer</li>
+          </ol>
+        </section>
+
+        <section class="cartao-lateral evento">
+          <h2 class="cartao-lateral__titulo">
+            <img src="assets/icone-calendario.svg" width="28" height="28" alt="">
+            Próximo Evento
+          </h2>
+          <div class="evento__item">
+            <img class="evento__foto" src="assets/evento-feira.png" width="84" height="77" alt="">
+            <div>
+              <p class="evento__nome">Feira Cultural da Praça</p>
+              <p class="evento__info">Dom, 14 de out <span class="ponto"></span> 5d</p>
+              <p class="evento__info">
+                <img src="assets/icone-local.svg" width="9.75" height="11.9167" alt="">
+                Praça da Sé (SP)
+              </p>
+            </div>
+          </div>
+          <button type="button" class="evento__ver-todos">
+            Ver todos os eventos
+            <img src="assets/icone-seta.svg" width="6" height="10.3708" alt="">
+          </button>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Página de categoria (Figma: Esporte, Cultura, Política, Tecnologia) -->
+  <main class="pagina pagina--categoria" id="tela-categoria" hidden>
+    <div class="banner">
+      <img class="banner__imagem" id="banner-imagem" src="" alt="">
+      <h1 class="banner__titulo" id="banner-titulo"></h1>
+    </div>
+    <div class="categoria">
+      <div class="categoria__cabecalho">
+        <span class="categoria__icone" id="categoria-icone"></span>
+        <h2 class="categoria__nome" id="categoria-nome"></h2>
+        <button type="button" class="seguindo">
+          <img src="assets/icone-seguindo.svg" width="18.7" height="18.7" alt="">
+          Seguindo
+        </button>
+      </div>
+      <p class="categoria__descricao" id="categoria-descricao"></p>
+      <h2 class="categoria__secao">Últimas notícias</h2>
+      <ul class="lista-categoria" id="lista-categoria"></ul>
+    </div>
+  </main>
+
+  <!-- Painel da demonstração: a redação publica e todas as telas leem do mesmo Singleton -->
+  <details class="painel-singleton">
+    <summary>
+      <span>Singleton · <code>RepositorioNoticias</code></span>
+      <span class="painel-singleton__instancia" id="instancia"></span>
+    </summary>
+    <label class="painel-singleton__campo">
+      Notícia
+      <select id="exemplo"></select>
+    </label>
+    <span class="painel-singleton__rotulo">Builder</span>
+    <div class="painel-singleton__opcoes" role="group" id="versoes"></div>
+    <button type="button" class="painel-singleton__publicar" id="publicar">Publicar no repositório</button>
+    <button type="button" class="painel-singleton__new" id="forcar-new">Tentar <code>new RepositorioNoticias()</code></button>
+    <details class="painel-singleton__registro">
+      <summary>Chamadas ao Singleton</summary>
+      <ol id="registro"></ol>
+    </details>
+  </details>
+
+  <!-- Builder (código em ../builder): monta a notícia que será publicada -->
+  <script src="../builder/js/blocos.js"></script>
+  <script src="../builder/js/noticia.js"></script>
+  <script src="../builder/js/builders.js"></script>
+  <script src="../builder/js/director.js"></script>
+  <script src="../builder/js/exemplos.js"></script>
+
+  <!-- Singleton e seus clientes -->
+  <script src="js/repositorioNoticias.js"></script>
+  <script src="js/telas.js"></script>
+  <script src="js/redacao.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

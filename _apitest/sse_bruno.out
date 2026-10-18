@@ -1,0 +1,5 @@
+: connected
+
+event: notification
+data: {"id":"7b5f4c8e-591f-4a42-842a-5a04cfa51783","recipientId":"bruno","read":false,"createdAt":"2026-10-17T02:37:44.290Z","type":"NEW_POST_IN_COMMUNITY","message":"Nova publicação em Tecnologia: Novo framework lançado","link":"/posts/p1"}
+
