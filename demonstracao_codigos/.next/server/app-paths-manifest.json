@@ -1,3 +1,8 @@
 {
+  "/api/notifications/route": "app/api/notifications/route.js",
+  "/api/moderation/pending/route": "app/api/moderation/pending/route.js",
+  "/api/notifications/stream/route": "app/api/notifications/stream/route.js",
+  "/api/moderation/approve/route": "app/api/moderation/approve/route.js",
+  "/api/moderation/reject/route": "app/api/moderation/reject/route.js",
   "/page": "app/page.js"
 }
