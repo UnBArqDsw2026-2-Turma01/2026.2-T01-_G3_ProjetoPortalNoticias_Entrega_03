@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burburinho · Montar notícia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/noticia.css">
+  <link rel="stylesheet" href="css/montar-noticia.css">
+</head>
+<body>
+  <!-- Espaço reservado para a barra lateral do portal -->
+  <aside class="navbar-espaco" aria-label="Navegação">[navbar]</aside>
+
+  <main class="conteudo conteudo--montar">
+    <!-- Passos 1 e 2: formulário e revisão -->
+    <div id="area-formulario">
+      <header class="banner">
+        <img class="banner__ilustracao" src="assets/burburinho-reporter.svg" width="459.262" height="360.303" alt="">
+        <h1 class="banner__titulo">
+          <span class="banner__sobre">Montar</span>
+          <span class="banner__destaque">Notícia</span>
+        </h1>
+      </header>
+
+      <div class="formulario-coluna">
+        <ol class="linha-passos">
+          <li data-passo="1"><span class="linha-passos__numero">1</span>Conte o que aconteceu</li>
+          <li data-passo="2"><span class="linha-passos__numero">2</span>Revise</li>
+          <li data-passo="3"><span class="linha-passos__numero">3</span>Envie</li>
+        </ol>
+
+        <!-- Passo 1: o redator informa os dados e monta os blocos na ordem desejada -->
+        <form id="formulario" class="formulario" novalidate>
+          <label class="link-exemplo">
+            <span class="campo__select">
+              <select id="exemplo">
+                <option value="">Preencher com um exemplo…</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="campo">
+            <span class="campo__rotulo">Escolha um Conteúdo</span>
+            <span class="campo__select">
+              <select name="categoria" required>
+                <option value="">Selecione o tipo do seu conteúdo</option>
+                <option>Cultura</option>
+                <option>Esporte</option>
+                <option>Política</option>
+                <option>Tecnologia</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="campo">
+            <span class="campo__rotulo">Título da Publicação</span>
+            <input name="titulo" type="text" required placeholder="Ex: Feira cultural movimenta a Praça da Liberdade">
+          </label>
+
+          <label class="campo">
+            <span class="campo__rotulo">Subtítulo <span class="campo__dica">(opcional)</span></span>
+            <input name="subtitulo" type="text" placeholder="Ex: Shows, arte e gastronomia prometem agitar o coração da cidade">
+          </label>
+
+          <label class="campo">
+            <span class="campo__rotulo">Seu nome</span>
+            <input name="autor" type="text" required placeholder="Ex: João Pedro Lopes">
+          </label>
+
+          <div class="campo">
+            <span class="campo__rotulo">Imagem de capa</span>
+            <label class="upload" data-upload="capa">
+              <input type="file" accept="image/*" hidden>
+              <img src="assets/icone-upload.svg" width="30" height="27" alt="">
+              <span class="upload__texto">
+                Clique para enviar ou arraste arquivos aqui
+                <small>JPG ou PNG <img src="assets/icone-ponto.svg" width="2" height="2" alt=""> Até 10MB</small>
+              </span>
+            </label>
+            <div class="miniaturas" data-preview="capa"></div>
+          </div>
+
+          <div class="campo">
+            <span class="campo__rotulo">Conte o que aconteceu <span class="campo__dica">(os blocos aparecem na notícia nesta ordem)</span></span>
+            <ol id="lista-blocos" class="lista-blocos"></ol>
+            <div class="adicionar-blocos">
+              <button type="button" data-adicionar="TEXTO">+ Texto</button>
+              <button type="button" data-adicionar="IMAGEM">+ Imagem</button>
+              <button type="button" data-adicionar="CARROSSEL">+ Carrossel</button>
+              <button type="button" data-adicionar="TOPICOS">+ Tópicos</button>
+            </div>
+          </div>
+
+          <label class="campo">
+            <span class="campo__rotulo">Fonte <span class="campo__dica">(opcional)</span></span>
+            <input name="fonte" type="text" placeholder="Ex: Secretaria Municipal de Cultura">
+          </label>
+
+          <label class="confirmacao">
+            <input name="confirmo" type="checkbox" required>
+            Confirmo que as informações são verdadeiras
+          </label>
+
+          <p id="erro-formulario" class="mensagem-erro" role="alert" hidden></p>
+
+          <div class="botoes">
+            <button type="reset" class="botao botao--contorno">Cancelar</button>
+            <button type="submit" class="botao botao--cheio">Revisar</button>
+          </div>
+        </form>
+
+        <!-- Passo 2: mostra a lista (roteiro) que será entregue ao Director -->
+        <section id="revisao" class="revisao" hidden>
+          <h2 class="revisao__titulo">Roteiro que o Director vai receber</h2>
+          <dl id="revisao-dados" class="revisao__dados"></dl>
+          <ol id="revisao-roteiro" class="revisao__roteiro"></ol>
+
+          <fieldset class="escolha-builder">
+            <legend class="campo__rotulo">Escolha o builder</legend>
+            <label><input type="radio" name="versao" value="destaque" checked> <strong>Destaque</strong> capa grande e letra capitular</label>
+            <label><input type="radio" name="versao" value="compacta"> <strong>Compacta</strong> capa pequena ao lado do título</label>
+            <label><input type="radio" name="versao" value="mista"> <strong>Mista</strong> título e subtítulo escritos sobre a capa</label>
+            <label class="campo-posicao" id="campo-posicao-revisao" hidden>
+              Posição do título sobre a capa
+              <span class="campo__select">
+                <select id="posicao-revisao">
+                <option value="superior-esquerda">Superior esquerda</option>
+                <option value="superior-direita">Superior direita</option>
+                <option value="inferior-esquerda" selected>Inferior esquerda</option>
+                <option value="inferior-direita">Inferior direita</option>
+                <option value="centro">Centro</option>
+                </select>
+              </span>
+            </label>
+          </fieldset>
+
+          <p id="erro-revisao" class="mensagem-erro" role="alert" hidden></p>
+
+          <div class="botoes">
+            <button type="button" id="voltar-editar" class="botao botao--contorno">Editar</button>
+            <button type="button" id="montar" class="botao botao--cheio">Montar notícia</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Passo 3: a notícia montada pelo builder escolhido -->
+    <div id="resultado" hidden></div>
+  </main>
+
+  <section id="painel-resultado" class="painel-builder" aria-label="Escolha do builder" hidden>
+    <span class="painel-builder__rotulo">Builder</span>
+    <div class="painel-builder__opcoes" role="group">
+      <button type="button" data-versao="destaque" aria-pressed="true">Destaque</button>
+      <button type="button" data-versao="compacta" aria-pressed="false">Compacta</button>
+      <button type="button" data-versao="mista" aria-pressed="false">Mista</button>
+    </div>
+    <label id="campo-posicao" class="painel-builder__posicao" hidden>
+      Posição do título
+      <select id="posicao-titulo">
+        <option value="superior-esquerda">Superior esquerda</option>
+                <option value="superior-direita">Superior direita</option>
+                <option value="inferior-esquerda" selected>Inferior esquerda</option>
+                <option value="inferior-direita">Inferior direita</option>
+                <option value="centro">Centro</option>
+      </select>
+    </label>
+  </section>
+
+  <script src="js/blocos.js"></script>
+  <script src="js/noticia.js"></script>
+  <script src="js/builders.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/exemplos.js"></script>
+  <script src="js/montar-noticia.js"></script>
+</body>
+</html>

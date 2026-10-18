@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1c1e">
+    <title>Burburinho · Histórico de rascunho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=League+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./memento.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Navegação">
+      <img
+        class="sidebar__logo"
+        src="../../SubGrupo1/singleton/assets/logo-burburinho.svg"
+        alt="Burburinho"
+      >
+      <nav class="menu" aria-label="Menu principal">
+        <a class="menu__item" href="#editor">Início</a>
+        <a class="menu__item" href="#editor">Explorar</a>
+        <a class="menu__item" href="#historico">Salvos</a>
+        <a class="menu__item menu__item--ativo" href="#editor" aria-current="page">
+          Sugerir Publicação
+        </a>
+      </nav>
+      <hr class="sidebar__divisor">
+      <p class="sidebar__titulo">Meus Conteúdos</p>
+      <ul class="categorias">
+        <li><span class="categoria__ponto categoria__ponto--esporte"></span>Esporte</li>
+        <li><span class="categoria__ponto categoria__ponto--cultura"></span>Cultura</li>
+        <li><span class="categoria__ponto categoria__ponto--politica"></span>Política</li>
+      </ul>
+      <span class="sidebar__rodape">PADRÕES DE PROJETO · SUBGRUPO 2</span>
+    </aside>
+
+    <main class="pagina">
+      <header class="topo">
+        <div>
+          <p class="topo__sobre">REDAÇÃO BURBURINHO</p>
+          <h1 id="page-title">Histórico de rascunho</h1>
+        </div>
+        <span class="topo__perfil" aria-label="Autor: Redação Burburinho">RB</span>
+      </header>
+
+      <div class="layout">
+        <section class="editor-panel" id="editor" aria-labelledby="editor-title">
+          <div class="secao-cabecalho">
+            <div>
+              <p class="eyebrow">SUGERIR PUBLICAÇÃO</p>
+              <h2 id="editor-title">Editor de notícia</h2>
+            </div>
+            <span class="status"><span class="status__ponto"></span> Rascunho</span>
+          </div>
+          <p class="intro">Edite a notícia e salve snapshots para acompanhar e recuperar versões anteriores.</p>
+
+          <form id="editor-form">
+            <label for="titulo">Título</label>
+            <input
+              id="titulo"
+              name="titulo"
+              type="text"
+              placeholder="Escreva um título para a notícia"
+              autocomplete="off"
+            >
+
+            <label for="conteudo">Conteúdo</label>
+            <textarea
+              id="conteudo"
+              name="conteudo"
+              rows="9"
+              placeholder="Comece a escrever a notícia..."
+            ></textarea>
+
+            <div class="editor-meta">
+              <span>Autor: <strong id="autor"></strong></span>
+              <span id="save-feedback" role="status" aria-live="polite">Nenhum snapshot salvo</span>
+            </div>
+
+            <div class="actions">
+              <button class="button button-primary" id="save-button" type="button">
+                + Salvar Snapshot
+              </button>
+              <div class="history-actions">
+                <button class="button button-secondary" id="undo-button" type="button" disabled>
+                  ↶ Desfazer
+                </button>
+                <button class="button button-secondary" id="redo-button" type="button" disabled>
+                  Refazer ↷
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <aside
+          class="history-panel"
+          id="historico"
+          aria-labelledby="history-title"
+          tabindex="-1"
+        >
+          <div class="history-heading">
+            <div>
+              <p class="eyebrow">VERSÕES SALVAS</p>
+              <h2 id="history-title">Histórico</h2>
+            </div>
+            <span class="count-badge" id="snapshot-count">0</span>
+          </div>
+          <p class="history-help">Cada snapshot guarda o estado da notícia naquele momento.</p>
+          <ol class="snapshot-list" id="snapshot-list" aria-live="polite">
+            <li class="empty-state">Seus snapshots aparecerão aqui.</li>
+          </ol>
+          <div class="pattern-note">
+            <span aria-hidden="true">◇</span>
+            <p><strong>Padrão Memento</strong><br>O Caretaker controla o histórico sem conhecer os detalhes do estado salvo.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
