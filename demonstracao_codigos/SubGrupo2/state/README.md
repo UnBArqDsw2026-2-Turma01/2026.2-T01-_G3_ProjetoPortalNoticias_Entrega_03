@@ -13,6 +13,14 @@ npm run dev
 
 Depois, abra `http://localhost:3000`. Para gerar uma versão de produção, use `npm run build` e `npm start`.
 
+## Roteiro para o vídeo
+
+1. Clique em **Submeter para análise**: o `DraftState` muda para `ReviewState` e delega a validação para a Chain.
+2. Observe no **Log da Chain** a ordem `ConteudoObrigatorioHandler → FonteHandler → RevisaoEditorialHandler → ModeracaoHandler`.
+3. No estado **Em análise**, demonstre **Aprovar postagem** e depois **Encaminhar para produção** e **Publicar no portal**.
+4. Reinicie e demonstre **Rejeitar postagem**.
+5. Reinicie, submeta novamente e demonstre **Solicitar ajustes**; em seguida clique em **Devolver para análise** para comprovar o retorno ao estado de análise.
+
 ## Correspondência com os papéis
 
 - `Publication`: contexto que mantém o estado atual e encaminha ações.
@@ -28,7 +36,8 @@ Depois, abra `http://localhost:3000`. Para gerar uma versão de produção, use 
 - O log registra a delegação do State e cada encaminhamento da Chain.
 - A execução válida percorre os quatro handlers na ordem configurada.
 - O fluxo aprovado chega a `Publicada`.
-- A rejeição aciona o retorno configurado em `setOnReject`, levando `EmModeracao` de volta para `Rascunho`; o diagrama não define `Rejeitada` como estado concreto.
+- O fluxo rejeitado chega a `Rejeitada`.
+- O fluxo de ajustes passa por `Ajustes necessários` e retorna para `Em análise`.
 
 Os cenários são testes manuais guiados pela interface para a demonstração em vídeo. A implementação atual demonstra uma Chain válida, na qual todos os handlers aprovam; a rejeição é uma decisão explícita da etapa de análise.
 
