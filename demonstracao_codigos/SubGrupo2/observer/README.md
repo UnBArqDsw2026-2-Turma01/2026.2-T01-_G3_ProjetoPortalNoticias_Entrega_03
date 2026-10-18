@@ -28,6 +28,10 @@ npm run dev     # http://localhost:3000
 
 Na tela: escolha um usuário, abra outra aba com outro usuário e aprove/reprove os posts pendentes.
 
+As dependências e o build do Next.js ficam nesta pasta (`node_modules/` e `.next/`).
+Execute os comandos acima a partir de `SubGrupo2/observer`, e não da raiz de
+`demonstracao_codigos`.
+
 ## O que trocar no projeto real
 - `InMemory*Repository` → banco (Prisma/Drizzle). Handlers não mudam.
 - `userId` por query → sessão autenticada; validar papel de moderador nas rotas `/api/moderation/*`.
