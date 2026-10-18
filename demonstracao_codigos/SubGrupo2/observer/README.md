@@ -1,6 +1,8 @@
-# UGC News — Módulo de Notificações (GoF Comportamental)
+# UGC News — Observer e Template Method
 
-Implementação em Next.js (App Router + TypeScript) do diagrama de notificações.
+Implementação em Next.js (App Router + TypeScript) do módulo de notificações do SubGrupo 2.
+
+O `EventBus` publica eventos para os observadores registrados, enquanto `NotificationHandler` usa Template Method para padronizar a resolução de destinatários, a montagem da mensagem e o envio.
 
 ## Padrões e onde estão no código
 

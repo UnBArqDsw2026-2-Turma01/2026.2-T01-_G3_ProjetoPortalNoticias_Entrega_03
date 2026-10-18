@@ -6,6 +6,25 @@
   background: var(--md-default-bg-color);
 }
 
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 1rem auto;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: #000;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .diagram-preview {
   position: relative;
   min-height: 120px;
@@ -147,4 +166,25 @@
   --md-default-fg-color: #333333;
   --md-primary-fg-color: #f04444;
   --md-accent-fg-color: #f04444;
+}
+.mermaid {
+  text-align: center;
+}
+
+.mermaid svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Página de diagrama em tela cheia */
+.md-main__inner.md-grid:has(.tela-cheia) {
+  max-width: none;
+}
+
+.tela-cheia .mermaid {
+  overflow: auto;
+}
+
+.tela-cheia .tabbed-content pre {
+  max-height: 80vh;
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burburinho · Builder de notícias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/noticia.css">
+</head>
+<body>
+  <!-- Espaço reservado para a barra lateral do portal -->
+  <aside class="navbar-espaco" aria-label="Navegação">[navbar]</aside>
+
+  <main id="conteudo" class="conteudo"></main>
+
+  <!-- Painel da demonstração: troca o builder concreto usado pelo Director -->
+  <section class="painel-builder" aria-label="Escolha do builder">
+    <label class="painel-builder__posicao painel-builder__exemplo">
+      Notícia de exemplo
+      <select id="exemplo"></select>
+    </label>
+    <span class="painel-builder__rotulo">Builder</span>
+    <div class="painel-builder__opcoes" role="group">
+      <button type="button" data-versao="destaque" aria-pressed="true">Destaque</button>
+      <button type="button" data-versao="compacta" aria-pressed="false">Compacta</button>
+      <button type="button" data-versao="mista" aria-pressed="false">Mista</button>
+    </div>
+    <label id="campo-posicao" class="painel-builder__posicao" hidden>
+      Posição do título
+      <select id="posicao-titulo">
+        <option value="superior-esquerda">Superior esquerda</option>
+        <option value="superior-direita">Superior direita</option>
+        <option value="inferior-esquerda" selected>Inferior esquerda</option>
+        <option value="inferior-direita">Inferior direita</option>
+        <option value="centro">Centro</option>
+      </select>
+    </label>
+    <details class="painel-builder__passos">
+      <summary>Passos chamados pelo Director</summary>
+      <ol id="passos"></ol>
+    </details>
+    <a class="painel-builder__link" href="montar-noticia.html">Montar a sua notícia →</a>
+  </section>
+
+  <script src="js/blocos.js"></script>
+  <script src="js/noticia.js"></script>
+  <script src="js/builders.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/exemplos.js"></script>
+  <script src="js/cliente.js"></script>
+</body>
+</html>
