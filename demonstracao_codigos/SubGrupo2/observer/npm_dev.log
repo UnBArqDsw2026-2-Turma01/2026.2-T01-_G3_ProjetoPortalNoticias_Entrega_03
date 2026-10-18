@@ -1,0 +1,17 @@
+
+> dev
+> next dev
+
+   ▲ Next.js 15.5.28
+   - Local:        http://localhost:3000
+   - Network:      http://26.218.41.98:3000
+
+ ✓ Starting...
+ ✓ Ready in 1814ms
+ ✓ Compiled /api/notifications/stream in 414ms (311 modules)
+ GET /api/notifications/stream?userId=carla 200 in 3999ms
+ ✓ Compiled /api/moderation/approve in 169ms (329 modules)
+ POST /api/moderation/approve 200 in 233ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1131ms (542 modules)
+ GET / 200 in 1348ms
