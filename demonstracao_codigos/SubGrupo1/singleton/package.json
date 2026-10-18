@@ -1,0 +1,10 @@
+{
+  "name": "singleton-repositorio-noticias",
+  "private": true,
+  "description": "Demonstração do padrão Singleton no repositório de notícias do Burburinho",
+  "type": "commonjs",
+  "scripts": {
+    "demo": "node demo.js",
+    "demo:pausar": "node demo.js --pausar"
+  }
+}

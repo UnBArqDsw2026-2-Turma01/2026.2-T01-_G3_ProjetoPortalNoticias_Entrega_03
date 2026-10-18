@@ -55,6 +55,10 @@ nav:
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

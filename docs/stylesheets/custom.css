@@ -148,3 +148,24 @@
   --md-primary-fg-color: #f04444;
   --md-accent-fg-color: #f04444;
 }
+.mermaid {
+  text-align: center;
+}
+
+.mermaid svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Página de diagrama em tela cheia */
+.md-main__inner.md-grid:has(.tela-cheia) {
+  max-width: none;
+}
+
+.tela-cheia .mermaid {
+  overflow: auto;
+}
+
+.tela-cheia .tabbed-content pre {
+  max-height: 80vh;
+}
