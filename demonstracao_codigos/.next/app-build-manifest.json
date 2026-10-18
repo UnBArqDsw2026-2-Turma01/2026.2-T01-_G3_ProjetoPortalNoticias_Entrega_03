@@ -1,5 +1,25 @@
 {
   "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layout.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/api/notifications/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/notifications/route.js"
+    ],
+    "/api/moderation/pending/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/moderation/pending/route.js"
+    ],
     "/api/notifications/stream/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -10,15 +30,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/moderation/approve/route.js"
     ],
-    "/layout": [
+    "/api/moderation/reject/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/layout.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/api/moderation/reject/route.js"
     ]
   }
 }
