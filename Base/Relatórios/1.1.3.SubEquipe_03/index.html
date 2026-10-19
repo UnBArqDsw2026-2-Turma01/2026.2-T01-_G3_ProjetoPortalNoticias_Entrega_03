@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/SapoBurburinho.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -249,6 +249,26 @@
   
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Projeto/Projeto.md" class="md-tabs__link">
+          
+  
+  
+  Projeto
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -342,6 +362,91 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projeto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projeto/Projeto.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -361,10 +466,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -382,8 +487,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -441,10 +546,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -462,8 +567,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2072,8 +2177,8 @@ Não omitir tópicos.</p>
 </code></pre></div>
 <p><strong>2. Temas e integração da identidade visual</strong></p>
 <p>Os decoradores <code>TextosFestivosDecorator</code>, <code>BannerFestivoDecorator</code>, <code>EnfeitesBordaDecorator</code> e <code>AnimacaoFestivaDecorator</code> acrescentam efeitos comemorativos em responsabilidades separadas. Nos decoradores de tema (<code>Tema*Decorator</code>), a troca da logo SVG foi integrada à definição da paleta de cores. O trecho abaixo, extraído de <code>TemaNatalDecorator.js</code>, evidencia essas duas responsabilidades na mesma classe, sem alterar <code>PaginaBasePortal</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">&#39;--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;&#39;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BurburinhoNatal.svg&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">'--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;'</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BurburinhoNatal.svg'</span><span class="p">);</span>
 </code></pre></div>
 <p>Os demais temas seguem a mesma estratégia, cada um com sua paleta e logo. Como a marca faz parte da identidade do tema selecionado, sua substituição ocorre junto com a aplicação do respectivo <code>Tema*Decorator</code>, sem exigir uma opção adicional no painel.</p>
 <p><strong>3. Inclusão de notícias da data comemorativa</strong></p>
@@ -2081,19 +2186,19 @@ Não omitir tópicos.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Trecho de DestaqueComemorativoDecorator.renderizar()</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">noticias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">obterNoticiasComemorativas</span><span class="p">();</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">html</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;noticias&quot;&gt;&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
-<span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;noticias&quot;&gt;&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="sb">`&lt;div class=&quot;noticias&quot;&gt;</span><span class="si">${</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">renderizarCartao</span><span class="p">(</span><span class="nx">n</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">html</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'&lt;div class="noticias"&gt;'</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'&lt;div class="noticias"&gt;'</span><span class="p">,</span>
+<span class="w">  </span><span class="sb">`&lt;div class="noticias"&gt;</span><span class="si">${</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">renderizarCartao</span><span class="p">(</span><span class="nx">n</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </code></pre></div>
 <p><strong>4. Destaque conforme os interesses do usuário</strong></p>
 <p>O <code>DestaqueInteresseUsuarioDecorator</code> consulta as notícias da página renderizada e verifica a correspondência com os interesses configurados, considerando categoria e tags. Nos cards compatíveis, acrescenta a classe visual <code>noticia-interesse</code> e o selo <strong>Para você</strong>, sem criar uma segunda cópia da notícia. O trecho mostra a alteração após a verificação da correspondência.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Trecho de DestaqueInteresseUsuarioDecorator.renderizar()</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">noticia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mapa</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticia</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">correspondeInteresse</span><span class="p">(</span><span class="nx">noticia</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">cartao</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">novaAbertura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">abertura</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/class=&quot;([^&quot;]+)&quot;/</span><span class="p">,</span>
-<span class="w">  </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">classes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`class=&quot;</span><span class="si">${</span><span class="nx">classes</span><span class="si">}</span><span class="sb"> noticia-interesse&quot;`</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">novoConteudo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conteudo</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;h3&gt;&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s1">&#39;&lt;span class=&quot;selo-interesse&quot;&gt;Para você&lt;/span&gt;&lt;h3&gt;&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">novaAbertura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">abertura</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/class="([^"]+)"/</span><span class="p">,</span>
+<span class="w">  </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">classes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`class="</span><span class="si">${</span><span class="nx">classes</span><span class="si">}</span><span class="sb"> noticia-interesse"`</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">novoConteudo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conteudo</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'&lt;h3&gt;'</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'&lt;span class="selo-interesse"&gt;Para você&lt;/span&gt;&lt;h3&gt;'</span><span class="p">);</span>
 <span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">novaAbertura</span><span class="si">}${</span><span class="nx">novoConteudo</span><span class="si">}${</span><span class="nx">fechamento</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 </code></pre></div>
 <p><strong>5. Composição final das contribuições</strong></p>
@@ -2231,11 +2336,11 @@ Não omitir tópicos.</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">PaginaPortal</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="p">.</span><span class="nx">target</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">PaginaPortal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;PaginaPortal é um contrato: use uma página concreta ou um decorador.&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'PaginaPortal é um contrato: use uma página concreta ou um decorador.'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;renderizar() deve ser implementado.&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'renderizar() deve ser implementado.'</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
@@ -2251,7 +2356,7 @@ Não omitir tópicos.</p>
 <span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">pagina</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">super</span><span class="p">();</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="p">.</span><span class="nx">target</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Use um decorador concreto.&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'Use um decorador concreto.'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">pagina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pagina</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
@@ -2261,7 +2366,7 @@ Não omitir tópicos.</p>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="nx">adicionarTema</span><span class="p">(</span><span class="nx">css</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;section class=&quot;tema&quot; style=&quot;</span><span class="si">${</span><span class="nx">css</span><span class="si">}</span><span class="sb">&quot;&gt;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;section class="tema" style="</span><span class="si">${</span><span class="nx">css</span><span class="si">}</span><span class="sb">"&gt;</span>
 <span class="sb">      </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">pagina</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">()</span><span class="si">}</span>
 <span class="sb">    &lt;/section&gt;`</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
@@ -2272,8 +2377,8 @@ Não omitir tópicos.</p>
 <p><code>TemaNatalDecorator</code> aproveita o construtor do decorador abstrato, define as cores de Natal e substitui a marca padrão pelo logo temático (<code>BurburinhoNatal.svg</code>). O método auxiliar <code>adicionarTema()</code> envolve o HTML da página com essas cores, sem precisar reescrever a Home, enquanto a substituição do ativo garante que a identidade visual comemorativa seja renderizada.</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TemaNatalDecorator</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">&#39;--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;&#39;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BurburinhoNatal.svg&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">'--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;'</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BurburinhoNatal.svg'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2287,9 +2392,9 @@ Não omitir tópicos.</p>
 </code></pre></div>
 <p>Em <code>BannerFestivoDecorator.renderizar()</code>, o tema identifica os dados do cabeçalho. <code>super.renderizar()</code> recupera o resultado do objeto envolvido. O ornamento complementar foi omitido deste trecho.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nome</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">simbolo</span><span class="p">,</span><span class="w"> </span><span class="nx">mensagem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temas</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="p">];</span>
-<span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class=&quot;camada-banner&quot;&gt;</span>
-<span class="sb">  &lt;header class=&quot;banner-tema&quot; role=&quot;note&quot;&gt;</span>
-<span class="sb">    &lt;span class=&quot;simbolo-banner&quot; aria-hidden=&quot;true&quot;&gt;</span><span class="si">${</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
+<span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class="camada-banner"&gt;</span>
+<span class="sb">  &lt;header class="banner-tema" role="note"&gt;</span>
+<span class="sb">    &lt;span class="simbolo-banner" aria-hidden="true"&gt;</span><span class="si">${</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
 <span class="sb">    &lt;div&gt;&lt;strong&gt;</span><span class="si">${</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> · </span><span class="si">${</span><span class="nx">data</span><span class="si">}</span><span class="sb">&lt;/strong&gt;&lt;p&gt;</span><span class="si">${</span><span class="nx">mensagem</span><span class="si">}</span><span class="sb">&lt;/p&gt;&lt;/div&gt;</span>
 <span class="sb">  &lt;/header&gt;</span>
 <span class="sb">  </span><span class="si">${</span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">()</span><span class="si">}</span>
@@ -2298,10 +2403,10 @@ Não omitir tópicos.</p>
 <h4 id="concretedecorator-de-animacao">ConcreteDecorator de animação</h4>
 <p>Trecho de <code>AnimacaoFestivaDecorator.renderizar()</code>: acrescenta as partículas e preserva o resultado do componente envolvido por meio de <code>super.renderizar()</code>. Essa classe cuida somente da animação; banner, textos e cores são acrescentados por outros decoradores.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">particulas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temas</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="p">].</span><span class="nx">particulas</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">simbolo</span><span class="p">,</span><span class="w"> </span><span class="nx">indice</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
-<span class="w">  </span><span class="sb">`&lt;span class=&quot;particula particula-</span><span class="si">${</span><span class="nx">indice</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb">&lt;/span&gt;`</span><span class="p">,</span>
-<span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class=&quot;camada-animada&quot;&gt;</span>
-<span class="sb">  &lt;div class=&quot;particulas particulas-</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="si">}</span><span class="sb">&quot; aria-hidden=&quot;true&quot;&gt;</span><span class="si">${</span><span class="nx">particulas</span><span class="si">}</span><span class="sb">&lt;/div&gt;</span>
+<span class="w">  </span><span class="sb">`&lt;span class="particula particula-</span><span class="si">${</span><span class="nx">indice</span><span class="si">}</span><span class="sb">"&gt;</span><span class="si">${</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb">&lt;/span&gt;`</span><span class="p">,</span>
+<span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class="camada-animada"&gt;</span>
+<span class="sb">  &lt;div class="particulas particulas-</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="si">}</span><span class="sb">" aria-hidden="true"&gt;</span><span class="si">${</span><span class="nx">particulas</span><span class="si">}</span><span class="sb">&lt;/div&gt;</span>
 <span class="sb">  </span><span class="si">${</span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">()</span><span class="si">}</span>
 <span class="sb">&lt;/div&gt;`</span><span class="p">;</span>
 </code></pre></div>
@@ -2311,7 +2416,7 @@ Não omitir tópicos.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">saudacao</span><span class="p">,</span><span class="w"> </span><span class="nx">secao</span><span class="p">,</span><span class="w"> </span><span class="nx">selo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temas</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="p">];</span>
 <span class="k">return</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">()</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(&lt;h1 data-saudacao&gt;)[^&lt;]*(&lt;\/h1&gt;)/</span><span class="p">,</span><span class="w"> </span><span class="sb">`$1</span><span class="si">${</span><span class="nx">saudacao</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">nomeUsuario</span><span class="si">}</span><span class="sb">!$2`</span><span class="p">)</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(&lt;h2 id=&quot;titulo-ultimas&quot; data-titulo-secao&gt;)[^&lt;]*(&lt;\/h2&gt;)/</span><span class="p">,</span><span class="w"> </span><span class="sb">`$1</span><span class="si">${</span><span class="nx">secao</span><span class="si">}</span><span class="sb">$2`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(&lt;h2 id="titulo-ultimas" data-titulo-secao&gt;)[^&lt;]*(&lt;\/h2&gt;)/</span><span class="p">,</span><span class="w"> </span><span class="sb">`$1</span><span class="si">${</span><span class="nx">secao</span><span class="si">}</span><span class="sb">$2`</span><span class="p">)</span>
 <span class="w">  </span><span class="c1">// As substituições dos selos continuam no arquivo completo.</span>
 </code></pre></div>
 <h4 id="definicao-das-camadas">Definição das camadas</h4>
@@ -2443,40 +2548,40 @@ Não omitir tópicos.</p>
 <h4 id="1-componente-concreto-base-renderizarhomejs">1. Componente Concreto Base (<code>renderizarHome.js</code>)</h4>
 <p>A classe base insere o SVG neutro da marca na barra lateral:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">renderizarHome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class=&quot;portal-home&quot;&gt;</span>
-<span class="sb">    &lt;aside class=&quot;sidebar&quot; aria-label=&quot;Navegação do portal&quot;&gt;</span>
-<span class="sb">      &lt;img class=&quot;marca&quot; src=&quot;</span><span class="si">${</span><span class="nx">asset</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&quot; alt=&quot;Burburinho&quot; width=&quot;297&quot; height=&quot;194&quot; /&gt;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;div class="portal-home"&gt;</span>
+<span class="sb">    &lt;aside class="sidebar" aria-label="Navegação do portal"&gt;</span>
+<span class="sb">      &lt;img class="marca" src="</span><span class="si">${</span><span class="nx">asset</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">)</span><span class="si">}</span><span class="sb">" alt="Burburinho" width="297" height="194" /&gt;</span>
 <span class="sb">      ...</span>
 </code></pre></div>
 <h4 id="2-decoradores-concretos-de-tema-temadecoratorjs">2. Decoradores Concretos de Tema (<code>Tema*Decorator.js</code>)</h4>
 <p>Cada decorador concreto sobrescreve o método <code>renderizar()</code>, combinando a injeção do escopo de estilo via <code>adicionarTema()</code> e a substituição dinâmica da marca:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// TemaNatalDecorator.js</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./PaginaPortalDecorator.js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./PaginaPortalDecorator.js'</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TemaNatalDecorator</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">&#39;--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;&#39;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BurburinhoNatal.svg&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">'--destaque:#ba303b;--barra:#173b31;--fundo:#fffaf3;--cartao:#fffdf8;--texto:#172d25;--borda:#cfa85b;--suave:#52645a;'</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BurburinhoNatal.svg'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// TemaHalloweenDecorator.js</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./PaginaPortalDecorator.js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./PaginaPortalDecorator.js'</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TemaHalloweenDecorator</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">&#39;--destaque:#b94708;--barra:#21162d;--fundo:#f6effa;--cartao:#fffbf7;--texto:#281a34;--borda:#ba692f;--suave:#67576f;&#39;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BurburinhoHalloween.svg&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">'--destaque:#b94708;--barra:#21162d;--fundo:#f6effa;--cartao:#fffbf7;--texto:#281a34;--borda:#ba692f;--suave:#67576f;'</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BurburinhoHalloween.svg'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// TemaDiaEstudanteDecorator.js</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./PaginaPortalDecorator.js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./PaginaPortalDecorator.js'</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">TemaDiaEstudanteDecorator</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">PaginaPortalDecorator</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">&#39;--destaque:#2457b3;--barra:#152b4f;--fundo:#f3f7ff;--cartao:#ffffff;--texto:#162d51;--borda:#dcac33;--suave:#52645a;&#39;</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;LogoBurburinho.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BurburinhoEstudante.svg&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionarTema</span><span class="p">(</span><span class="s1">'--destaque:#2457b3;--barra:#152b4f;--fundo:#f3f7ff;--cartao:#ffffff;--texto:#162d51;--borda:#dcac33;--suave:#52645a;'</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'LogoBurburinho.svg'</span><span class="p">,</span><span class="w"> </span><span class="s1">'BurburinhoEstudante.svg'</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2621,15 +2726,15 @@ Não omitir tópicos.</p>
 <p>O método <code>renderizarCartao()</code> transforma cada notícia selecionada em um elemento <code>article</code>. A classe <code>noticia-comemorativa</code> identifica a apresentação especial e o atributo <code>data-comemoracao</code> permite ajustar a aparência ao evento escolhido. O cartão também preserva os dados necessários para leitura, busca e identificação da notícia.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">renderizarCartao</span><span class="p">(</span><span class="nx">noticia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">configuracao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temas</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="p">];</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;article class=&quot;noticia cartao noticia-comemorativa&quot; data-noticia=&quot;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot; data-comemoracao=&quot;</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="si">}</span><span class="sb">&quot;&gt;</span>
-<span class="sb">    &lt;img class=&quot;foto-noticia&quot; src=&quot;assets/</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">foto</span><span class="si">}</span><span class="sb">.webp&quot; alt=&quot;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb">&quot; /&gt;</span>
-<span class="sb">    &lt;div class=&quot;noticia-texto&quot;&gt;</span>
-<span class="sb">      &lt;span class=&quot;categoria </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">icone</span><span class="p">(</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="p">)</span><span class="si">}${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">categoria</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
-<span class="sb">      &lt;button class=&quot;salvar&quot; type=&quot;button&quot; aria-label=&quot;Salvar notícia&quot; aria-pressed=&quot;false&quot;&gt;</span><span class="si">${</span><span class="nx">icone</span><span class="p">(</span><span class="s1">&#39;salvo&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/button&gt;</span>
-<span class="sb">      &lt;span class=&quot;selo-comemorativo&quot;&gt;</span><span class="si">${</span><span class="nx">configuracao</span><span class="p">.</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb"> Especial </span><span class="si">${</span><span class="nx">configuracao</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
-<span class="sb">      &lt;h3&gt;&lt;a href=&quot;#noticia-</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot; data-abrir-noticia=&quot;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/h3&gt;</span>
-<span class="sb">      &lt;p class=&quot;resumo-noticia&quot;&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">resumo</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
-<span class="sb">      &lt;footer&gt;&lt;b class=&quot;avatar </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="si">}</span><span class="sb">&quot;&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">inicial</span><span class="si">}</span><span class="sb">&lt;/b&gt;&lt;strong&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">autor</span><span class="si">}</span><span class="sb">&lt;/strong&gt;&lt;span&gt;•&amp;nbsp; </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">tempo</span><span class="si">}</span><span class="sb">&lt;/span&gt;&lt;/footer&gt;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;article class="noticia cartao noticia-comemorativa" data-noticia="</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">" data-comemoracao="</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tema</span><span class="si">}</span><span class="sb">"&gt;</span>
+<span class="sb">    &lt;img class="foto-noticia" src="assets/</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">foto</span><span class="si">}</span><span class="sb">.webp" alt="</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb">" /&gt;</span>
+<span class="sb">    &lt;div class="noticia-texto"&gt;</span>
+<span class="sb">      &lt;span class="categoria </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="si">}</span><span class="sb">"&gt;</span><span class="si">${</span><span class="nx">icone</span><span class="p">(</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="p">)</span><span class="si">}${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">categoria</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
+<span class="sb">      &lt;button class="salvar" type="button" aria-label="Salvar notícia" aria-pressed="false"&gt;</span><span class="si">${</span><span class="nx">icone</span><span class="p">(</span><span class="s1">'salvo'</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/button&gt;</span>
+<span class="sb">      &lt;span class="selo-comemorativo"&gt;</span><span class="si">${</span><span class="nx">configuracao</span><span class="p">.</span><span class="nx">simbolo</span><span class="si">}</span><span class="sb"> Especial </span><span class="si">${</span><span class="nx">configuracao</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
+<span class="sb">      &lt;h3&gt;&lt;a href="#noticia-</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">" data-abrir-noticia="</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">"&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb">&lt;/a&gt;&lt;/h3&gt;</span>
+<span class="sb">      &lt;p class="resumo-noticia"&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">resumo</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">      &lt;footer&gt;&lt;b class="avatar </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">cor</span><span class="si">}</span><span class="sb">"&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">inicial</span><span class="si">}</span><span class="sb">&lt;/b&gt;&lt;strong&gt;</span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">autor</span><span class="si">}</span><span class="sb">&lt;/strong&gt;&lt;span&gt;•&amp;nbsp; </span><span class="si">${</span><span class="nx">noticia</span><span class="p">.</span><span class="nx">tempo</span><span class="si">}</span><span class="sb">&lt;/span&gt;&lt;/footer&gt;</span>
 <span class="sb">    &lt;/div&gt;</span>
 <span class="sb">  &lt;/article&gt;`</span><span class="p">;</span>
 <span class="p">}</span>
@@ -2638,9 +2743,9 @@ Não omitir tópicos.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">();</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">noticias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">obterNoticiasComemorativas</span><span class="p">();</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">html</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;noticias&quot;&gt;&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;noticias&quot;&gt;&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="sb">`&lt;div class=&quot;noticias&quot;&gt;</span><span class="si">${</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">renderizarCartao</span><span class="p">(</span><span class="nx">n</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">html</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'&lt;div class="noticias"&gt;'</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'&lt;div class="noticias"&gt;'</span><span class="p">,</span>
+<span class="w">    </span><span class="sb">`&lt;div class="noticias"&gt;</span><span class="si">${</span><span class="nx">noticias</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">renderizarCartao</span><span class="p">(</span><span class="nx">n</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Na Home padrão, o destaque comemorativo não é aplicado pelo cliente. Ao trocar Natal por Halloween ou Dia do Estudante, a composição é reconstruída com o tema escolhido. Isso evita acumular notícias de comemorações anteriores.</p>
@@ -2648,7 +2753,7 @@ Não omitir tópicos.</p>
 <p>O segundo Decorator não acrescenta novas notícias. Sua responsabilidade é percorrer os cartões já renderizados e identificar quais correspondem a interesses previamente configurados. Para a demonstração, <code>usuario.js</code> define um conjunto fictício de interesses. Não há aprendizado automático, recomendação por IA ou consulta a um perfil real.</p>
 <p>No início de <code>DestaqueInteresseUsuarioDecorator.js</code>, a função <code>normalizar()</code> converte os termos para minúsculas e remove acentos. O construtor armazena os interesses normalizados em um <code>Set</code>, enquanto <code>correspondeInteresse()</code> compara esses valores à categoria e às tags de cada notícia.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">normalizar</span><span class="p">(</span><span class="nx">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">texto</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">normalize</span><span class="p">(</span><span class="s1">&#39;NFD&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\u0300-\u036f]/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">texto</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">''</span><span class="p">).</span><span class="nx">normalize</span><span class="p">(</span><span class="s1">'NFD'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[\u0300-\u036f]/g</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
 <span class="p">}</span>
 
@@ -2668,14 +2773,14 @@ Não omitir tópicos.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">renderizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">([...</span><span class="nx">noticias</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">noticiasComemorativas</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">]));</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">renderizar</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span>
-<span class="w">    </span><span class="sr">/(&lt;article\b[^&gt;]*\bdata-noticia=&quot;([^&quot;]+)&quot;[^&gt;]*&gt;)([\s\S]*?)(&lt;\/article&gt;)/g</span><span class="p">,</span>
+<span class="w">    </span><span class="sr">/(&lt;article\b[^&gt;]*\bdata-noticia="([^"]+)"[^&gt;]*&gt;)([\s\S]*?)(&lt;\/article&gt;)/g</span><span class="p">,</span>
 <span class="w">    </span><span class="p">(</span><span class="nx">cartao</span><span class="p">,</span><span class="w"> </span><span class="nx">abertura</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">conteudo</span><span class="p">,</span><span class="w"> </span><span class="nx">fechamento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">noticia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mapa</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">noticia</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">correspondeInteresse</span><span class="p">(</span><span class="nx">noticia</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">cartao</span><span class="p">;</span>
-<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">novaAbertura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">abertura</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/class=&quot;([^&quot;]+)&quot;/</span><span class="p">,</span>
-<span class="w">        </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">classes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`class=&quot;</span><span class="si">${</span><span class="nx">classes</span><span class="si">}</span><span class="sb"> noticia-interesse&quot;`</span><span class="p">);</span>
-<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">novoConteudo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conteudo</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;h3&gt;&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="s1">&#39;&lt;span class=&quot;selo-interesse&quot;&gt;Para você&lt;/span&gt;&lt;h3&gt;&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">novaAbertura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">abertura</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/class="([^"]+)"/</span><span class="p">,</span>
+<span class="w">        </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">classes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`class="</span><span class="si">${</span><span class="nx">classes</span><span class="si">}</span><span class="sb"> noticia-interesse"`</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">novoConteudo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conteudo</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'&lt;h3&gt;'</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">'&lt;span class="selo-interesse"&gt;Para você&lt;/span&gt;&lt;h3&gt;'</span><span class="p">);</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">novaAbertura</span><span class="si">}${</span><span class="nx">novoConteudo</span><span class="si">}${</span><span class="nx">fechamento</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">);</span>
@@ -2704,19 +2809,19 @@ Não omitir tópicos.</p>
 <span class="w">    </span><span class="nv">--interesse-cor1</span><span class="p">:</span><span class="w"> </span><span class="mh">#b52e45</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-cor2</span><span class="p">:</span><span class="w"> </span><span class="mh">#dcb65b</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-fundo</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff3df</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🎄&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">"🎄"</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">moldura-halloween</span><span class="w"> </span><span class="p">.</span><span class="nc">noticia-interesse</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nv">--interesse-cor1</span><span class="p">:</span><span class="w"> </span><span class="mh">#783dc1</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-cor2</span><span class="p">:</span><span class="w"> </span><span class="mh">#e17a2c</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-fundo</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff0df</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🎃&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">"🎃"</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">moldura-estudante</span><span class="w"> </span><span class="p">.</span><span class="nc">noticia-interesse</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nv">--interesse-cor1</span><span class="p">:</span><span class="w"> </span><span class="mh">#2457b3</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-cor2</span><span class="p">:</span><span class="w"> </span><span class="mh">#dfb950</span><span class="p">;</span>
 <span class="w">    </span><span class="nv">--interesse-fundo</span><span class="p">:</span><span class="w"> </span><span class="mh">#eef5ff</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🎓&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--interesse-emoji</span><span class="p">:</span><span class="w"> </span><span class="s2">"🎓"</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Quando uma notícia comemorativa também corresponde aos interesses, ela mantém os dois selos e recebe o tratamento visual combinado definido por <code>.noticia-comemorativa.noticia-interesse</code>. Essa adaptação ajuda a comunicar simultaneamente as duas condições ao usuário. As animações também respeitam a preferência por movimento reduzido do sistema.</p>
@@ -2882,7 +2987,7 @@ Demais orientações disponíveis nas Diretrizes (vide Aprender3).</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/diagram-zoom.js"></script>
       
