@@ -1047,7 +1047,13 @@ Referências, versionamento e senso crítico
 <p>O padrão não é tratado como uma solução isolada ou como uma receita de código. A escolha precisa ser justificada pelo problema do Burburinho, e a implementação deve permitir verificar a correspondência entre o contexto, o diagrama, o código e o comportamento observado.</p>
 <h2 id="padroes-trabalhados">Padrões trabalhados</h2>
 <h3 id="gofs-criacionais">GoFs criacionais</h3>
-<p>Os padrões criacionais apoiam a criação de objetos e a configuração de instâncias, reduzindo o acoplamento entre o cliente e as classes concretas. O padrão escolhido pela Subequipe 01 será relacionado a uma necessidade de criação presente no portal.</p>
+<p>Os padrões criacionais apoiam a criação de objetos e a configuração de instâncias, reduzindo o acoplamento entre o cliente e as classes concretas. Na Subequipe 01, cada integrante aplicou um padrão diferente a uma necessidade de criação presente no portal:</p>
+<ul>
+<li><strong>Builder:</strong> monta a página de notícia passo a passo a partir de uma mesma estrutura base (título, subtítulo, categoria, capa, autor e blocos de conteúdo). O <code>NoticiaDirector</code> coordena a montagem, enquanto os builders concretos (<code>NoticiaDestaqueBuilder</code>, <code>NoticiaCompactaBuilder</code> e <code>NoticiaMistaBuilder</code>) produzem layouts diferentes, como capa grande em destaque, imagens pequenas ao lado do texto ou título e subtítulo escritos sobre a capa.</li>
+<li><strong>Singleton:</strong> garante uma única instância de <code>RepositorioNoticias</code>, acessada por <code>getInstancia()</code>. Assim, a página inicial, a página de categoria e os destaques consultam os mesmos dados, evitando cópias inconsistentes ou notícias duplicadas.</li>
+<li><strong>Abstract Factory:</strong> cria famílias coerentes de configurações para comunidades (tema visual, política de moderação e widget padrão). O <code>CriadorDeComunidade</code> utiliza apenas a <code>ComunidadeFactory</code> e os produtos abstratos, enquanto as fábricas concretas de Tecnologia, Esportes, Cultura e Política garantem que peças de categorias diferentes não sejam misturadas.</li>
+</ul>
+<p>Os padrões também se complementam: a notícia montada pelo Builder é publicada no repositório único mantido pelo Singleton, por intermédio da <code>Redacao</code>. Todas as soluções foram implementadas em JavaScript, executadas no navegador seguindo o protótipo do Figma e demonstradas em vídeo. O detalhamento dos diagramas, da análise crítica dos rascunhos gerados por IA e das contribuições está disponível no <a href="../Relat%C3%B3rios/1.1.1.SubEquipe_01/">Relatório da Subequipe 01</a>.</p>
 <h3 id="gofs-comportamentais">GoFs comportamentais</h3>
 <p>Os padrões comportamentais organizam a comunicação entre objetos e a distribuição de responsabilidades:</p>
 <ul>
